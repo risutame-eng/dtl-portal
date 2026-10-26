@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DTocho Clothing · Grupo de Tocho</title>
+  <meta name="description" content="DTocho Clothing: body, chaleco, jersey, licra, playera casual y shorts, con los precios publicados por Grupo de Tocho.">
+  <link rel="icon" href="https://www.grupodetocho.com/images/32x32/19562823/LogoIcono-SW774DBA7vPmKt6n1u8Uvg-XrCIcCNxBMoOkKQnbEaKdA.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #101114;
+      --paper: #f4f1ea;
+      --white: #fbfaf7;
+      --gold: #c6a15a;
+      --gold-2: #e7d3a2;
+      --sun: #f0b429;
+      --magenta: #e4378c;
+      --lagoon: #19c6d6;
+      --violet: #9a4dff;
+      --muted: #6d685e;
+      --text: #1b1a17;
+      --max: 1100px;
+      --display: "Barlow Condensed", "Arial Narrow", Impact, sans-serif;
+      --sans: "Manrope", "Segoe UI", sans-serif;
+      --pill: 999px;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    body { margin: 0; background: var(--paper); color: var(--text); font-family: var(--sans); line-height: 1.6; }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; }
+    :focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+    .wrap { width: min(var(--max), calc(100% - 2.4rem)); margin-inline: auto; }
+    header {
+      position: sticky; top: 0; z-index: 5;
+      display: flex; justify-content: space-between; align-items: center; gap: 1rem;
+      padding: 0.9rem 4vw; background: #101114; color: #fbfaf7;
+    }
+    header::after {
+      content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 3px;
+      background: linear-gradient(90deg, var(--sun), var(--magenta) 42%, var(--lagoon) 72%, var(--violet));
+    }
+    .brand { font-family: var(--display); letter-spacing: 0.08em; text-decoration: none; font-size: 1.35rem; }
+    .brand small { display: block; letter-spacing: 0.14em; font-family: var(--sans); font-size: 0.68rem; color: var(--gold-2); }
+    nav { display: flex; gap: 1rem; align-items: center; }
+    nav a { text-decoration: none; font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; }
+    .back { border: 1.5px solid var(--gold); border-radius: var(--pill); padding: 0.45rem 0.85rem; }
+    main { padding: 1.5rem 0 2.2rem; }
+    .kicker { margin: 0 0 0.35rem; color: #8a6a32; letter-spacing: 0.16em; text-transform: uppercase; font-size: 0.75rem; font-weight: 700; }
+    h1, h2 { font-family: var(--display); font-weight: 700; letter-spacing: 0.03em; line-height: 0.95; margin: 0; }
+    h1 { font-size: clamp(2.8rem, 6vw, 4.6rem); margin-bottom: 1rem; }
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; perspective: 1200px; }
+    .piece {
+      background: var(--white);
+      border-radius: 28px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 16px 40px rgba(16, 17, 20, 0.06);
+      animation: rise 0.7s ease both;
+      transition: translate 0.35s ease, box-shadow 0.35s ease;
+    }
+    .piece:nth-child(2) { animation-delay: 0.06s; }
+    .piece:nth-child(3) { animation-delay: 0.12s; }
+    .piece:nth-child(4) { animation-delay: 0.18s; }
+    .piece:nth-child(5) { animation-delay: 0.24s; }
+    .piece:nth-child(6) { animation-delay: 0.3s; }
+    .piece:nth-child(7) { animation-delay: 0.36s; }
+    .piece:hover { translate: 0 -8px; box-shadow: 0 24px 50px rgba(16, 17, 20, 0.14); }
+    @keyframes rise {
+      from { opacity: 0; translate: 0 24px; }
+      to { opacity: 1; translate: 0 0; }
+    }
+    .shot {
+      position: relative;
+      display: block;
+      width: 100%;
+      padding: 0;
+      border: 0;
+      background: #fff;
+      overflow: hidden;
+      cursor: zoom-in;
+      font: inherit;
+      color: inherit;
+    }
+    .shot img {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+      background: #fff;
+      transition: transform 0.6s ease;
+    }
+    .piece:hover .shot img { transform: scale(1.08); }
+    .shot::after {
+      content: "Ver pieza";
+      position: absolute;
+      left: 0.9rem;
+      bottom: 0.9rem;
+      background: var(--ink);
+      color: #fff;
+      border-radius: var(--pill);
+      padding: 0.4rem 0.75rem;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      opacity: 0;
+      translate: 0 8px;
+      transition: opacity 0.3s ease, translate 0.3s ease;
+    }
+    .piece:hover .shot::after,
+    .shot:focus-visible::after { opacity: 1; translate: 0 0; }
+    .piece .copy { padding: 1rem 1.05rem 1.15rem; }
+    .piece h2 { font-size: 1.8rem; }
+    .price { margin: 0.35rem 0 0; font-family: var(--display); font-size: 1.8rem; letter-spacing: 0.04em; }
+    .visor {
+      width: min(980px, calc(100% - 2rem));
+      max-height: calc(100vh - 2rem);
+      border: 0;
+      padding: 0;
+      background: transparent;
+      color: #fff;
+    }
+    .visor::backdrop {
+      background: rgba(8, 9, 12, 0.78);
+      backdrop-filter: blur(6px);
+    }
+    .visor[open] .visor-card { animation: pop 0.32s ease; }
+    @keyframes pop {
+      from { opacity: 0; translate: 0 16px; }
+      to { opacity: 1; translate: 0 0; }
+    }
+    .visor-card {
+      position: relative;
+      background: #16181d;
+      border-radius: 28px;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      min-height: min(70vh, 560px);
+    }
+    .visor-stage {
+      background:
+        radial-gradient(circle at 50% 42%, #ffffff 0%, #f3f1ec 72%);
+      display: grid;
+      place-items: center;
+    }
+    .visor-card img {
+      width: 100%;
+      height: min(70vh, 560px);
+      object-fit: contain;
+      background: transparent;
+      opacity: 1;
+      transition: opacity 0.22s ease;
+    }
+    .visor-card img.is-swap { opacity: 0; }
+    .visor-copy { padding: 1.5rem 1.35rem 1.35rem; display: flex; flex-direction: column; }
+    .visor-copy h2 { font-size: clamp(2.4rem, 4vw, 3.4rem); }
+    .visor-copy .price { color: var(--gold-2); margin-top: 0.2rem; }
+    .visor-index {
+      margin: 0.85rem 0 0;
+      color: rgba(255,255,255,0.55);
+      letter-spacing: 0.18em;
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+    .visor-hint { margin: 0.45rem 0 0; color: rgba(255,255,255,0.42); font-size: 0.82rem; }
+    .visor-nav { display: flex; gap: 0.5rem; margin-top: auto; padding-top: 1.4rem; }
+    .visor button {
+      border: 1.5px solid rgba(255,255,255,0.35);
+      background: transparent;
+      color: #fff;
+      border-radius: var(--pill);
+      padding: 0.55rem 0.9rem;
+      font: inherit;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.2s ease, border-color 0.2s ease, translate 0.2s ease;
+    }
+    .visor button:hover { background: rgba(255,255,255,0.08); border-color: var(--gold-2); translate: 0 -1px; }
+    .visor .close { position: absolute; top: 0.85rem; right: 0.85rem; background: var(--ink); }
+    @media (prefers-reduced-motion: reduce) {
+      .piece, .visor[open] .visor-card, .shot img, .shot::after, .visor-card img, .visor button { animation: none; transition: none; }
+    }
+    footer { padding: 0.4rem 4vw 2rem; color: var(--muted); font-size: 0.92rem; }
+    footer a { color: #8a6a32; }
+    @media (max-width: 860px) {
+      .grid { grid-template-columns: 1fr 1fr; }
+      nav { gap: 0.55rem; }
+    }
+    @media (max-width: 640px) {
+      header { flex-wrap: wrap; row-gap: 0.65rem; }
+      nav { width: 100%; justify-content: flex-start; }
+      .back { white-space: nowrap; }
+    }
+    @media (max-width: 560px) {
+      .grid { grid-template-columns: 1fr; }
+      .piece .shot img { height: 70vw; }
+      .visor-card { grid-template-columns: 1fr; min-height: 0; }
+      .visor-card img { height: 46vh; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a class="brand" href="DTL.html">DTOCHO CLOTHING<small>Grupo de Tocho</small></a>
+    <nav aria-label="Clothing">
+      <a href="#linea">Línea</a>
+      <a href="#contacto">Contacto</a>
+      <a class="back" href="DTL.html">Volver a DTL</a>
+    </nav>
+  </header>
+  <main>
+    <section class="wrap" id="linea">
+      <p class="kicker">Línea publicada</p>
+      <h1>DTocho Clothing</h1>
+      <div class="grid">
+        <article class="piece">
+          <button class="shot" type="button" data-index="0" aria-label="Ver Body">
+            <img src="https://www.grupodetocho.com/images/0/23387638/Body-fPYIZkcY89pDBeXKUJwZuw.jpg" alt="Body de DTocho Clothing">
+          </button>
+          <div class="copy">
+            <h2>Body</h2>
+            <p class="price">$300.00</p>
+          </div>
+        </article>
+        <article class="piece">
+          <button class="shot" type="button" data-index="1" aria-label="Ver Chaleco">
+            <img src="https://www.grupodetocho.com/images/0/23388087/Chaleco-T8wnOTztw8aM2ZsB3Hz3JA.jpg" alt="Chaleco de DTocho Clothing">
+          </button>
+          <div class="copy">
+            <h2>Chaleco</h2>
+            <p class="price">$250.00</p>
+          </div>
+        </article>
+        <article class="piece">
+          <button class="shot" type="button" data-index="2" aria-label="Ver Jersey">
+            <img src="https://www.grupodetocho.com/images/0/23388106/Jersey-Vb90DvjXVX7wX135HY1PZw.jpg" alt="Jersey de DTocho Clothing">
+          </button>
+          <div class="copy">
+            <h2>Jersey</h2>
+            <p class="price">$400.00</p>
+          </div>
+        </article>
+        <article class="piece">
+          <button class="shot" type="button" data-index="3" aria-label="Ver Licra Mujer">
+            <img src="https://www.grupodetocho.com/images/0/23388124/Licra-VV0Vm3OODWVjwAV1mQ2yyg.jpg" alt="Licra de mujer de DTocho Clothing">
+          </button>
+          <div class="copy">
+            <h2>Licra - Mujer</h2>
+            <p class="price">$200.00</p>
+          </div>
+        </article>
+        <article class="piece">
+          <button class="shot" type="button" data-index="4" aria-label="Ver Playera Casual">
+            <img src="https://www.grupodetocho.com/images/0/23389369/Playera-3HlvtIbgcKVrm-OgTTwkgg.jpg" alt="Playera casual de DTocho Clothing">
+          </button>
+          <div class="copy">
+            <h2>Playera Casual</h2>
+            <p class="price">$240.00</p>
+          </div>
+        </article>
+        <article class="piece">
+          <button class="shot" type="button" data-index="5" aria-label="Ver Short Doble Caballero">
+            <img src="https://www.grupodetocho.com/images/0/23389431/Short-dSbwjTLK2kUqYPLnRz8LdQ.jpg" alt="Short doble de caballero de DTocho Clothing">
+          </button>
+          <div class="copy">
+            <h2>Short Doble Caballero</h2>
+            <p class="price">$280.00</p>
+          </div>
+        </article>
+        <article class="piece">
+          <button class="shot" type="button" data-index="6" aria-label="Ver Short Sublimado">
+            <img src="https://www.grupodetocho.com/images/0/23389454/Short2-ZXs6uRxcsb9rs_JiFM9HQg.jpg" alt="Short sublimado de DTocho Clothing">
+          </button>
+          <div class="copy">
+            <h2>Short Sublimado</h2>
+            <p class="price">$240.00</p>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+  <footer id="contacto">
+    <div class="wrap">
+      <p>No dudes en contactarnos si tienes alguna pregunta sobre nuestros proyectos.</p>
+      <p>Grupo de Tocho · Av. Paseo de la Reforma #300, CDMX 06600 ·
+      <a href="tel:+525620385823">56 2038 5823</a> ·
+      <a href="mailto:info@grupodetocho.com">info@grupodetocho.com</a> ·
+      <a href="DTL.html">Portal DTL</a></p>
+    </div>
+  </footer>
+  <dialog class="visor" id="visor" aria-label="Vista de la pieza">
+    <div class="visor-card">
+      <div class="visor-stage"><img id="visor-foto" alt=""></div>
+      <div class="visor-copy">
+        <p class="kicker">DTocho Clothing</p>
+        <h2 id="visor-nombre"></h2>
+        <p class="price" id="visor-precio"></p>
+        <p class="visor-index" id="visor-indice"></p>
+        <p class="visor-hint">Flechas del teclado para recorrer la línea.</p>
+        <div class="visor-nav">
+          <button type="button" id="visor-prev">Anterior</button>
+          <button type="button" id="visor-next">Siguiente</button>
+          <button type="button" class="close" id="visor-close">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </dialog>
+  <script>
+    const shots = [...document.querySelectorAll(".shot")];
+    const pieces = shots.map((shot) => ({
+      src: shot.querySelector("img").src,
+      alt: shot.querySelector("img").alt,
+      name: shot.parentElement.querySelector("h2").textContent,
+      price: shot.parentElement.querySelector(".price").textContent
+    }));
+    const visor = document.querySelector("#visor");
+    const foto = document.querySelector("#visor-foto");
+    const nombre = document.querySelector("#visor-nombre");
+    const precio = document.querySelector("#visor-precio");
+    let actual = 0;
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    function mostrar(index) {
+      actual = (index + pieces.length) % pieces.length;
+      const pieza = pieces[actual];
+      const aplicar = () => {
+        foto.src = pieza.src;
+        foto.alt = pieza.alt;
+        nombre.textContent = pieza.name;
+        precio.textContent = pieza.price;
+        document.querySelector("#visor-indice").textContent =
+          String(actual + 1).padStart(2, "0") + "  /  " + String(pieces.length).padStart(2, "0");
+      };
+      if (visor.open && !reduce) {
+        foto.classList.add("is-swap");
+        window.setTimeout(() => {
+          aplicar();
+          foto.classList.remove("is-swap");
+        }, 160);
+      } else {
+        aplicar();
+      }
+      if (!visor.open) visor.showModal();
+    }
+
+    shots.forEach((shot, index) => {
+      shot.addEventListener("click", () => mostrar(index));
+      if (reduce) return;
+      const card = shot.parentElement;
+      card.addEventListener("mousemove", (event) => {
+        const box = card.getBoundingClientRect();
+        const x = (event.clientX - box.left) / box.width - 0.5;
+        const y = (event.clientY - box.top) / box.height - 0.5;
+        card.style.transform = "rotateY(" + (x * 7) + "deg) rotateX(" + (-y * 7) + "deg)";
+      });
+      card.addEventListener("mouseleave", () => { card.style.transform = ""; });
+    });
+
+    document.querySelector("#visor-prev").addEventListener("click", () => mostrar(actual - 1));
+    document.querySelector("#visor-next").addEventListener("click", () => mostrar(actual + 1));
+    document.querySelector("#visor-close").addEventListener("click", () => visor.close());
+    visor.addEventListener("click", (event) => {
+      if (event.target === visor) visor.close();
+    });
+    document.addEventListener("keydown", (event) => {
+      if (!visor.open) return;
+      if (event.key === "ArrowRight") mostrar(actual + 1);
+      if (event.key === "ArrowLeft") mostrar(actual - 1);
+    });
+  </script>
+</body>
+</html>

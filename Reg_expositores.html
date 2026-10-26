@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Registro de expositores · Expo Tocho Vallarta 2027</title>
+  <meta name="description" content="Registro oficial de expositores de Expo Tocho Vallarta 2027. Stand, premiación, cóctel y datos de contacto.">
+  <link rel="icon" href="https://www.grupodetocho.com/images/32x32/19562823/LogoIcono-SW774DBA7vPmKt6n1u8Uvg-XrCIcCNxBMoOkKQnbEaKdA.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #101114;
+      --sun: #f0b429;
+      --ocean: #0b4f9c;
+      --lagoon: #19c6d6;
+      --magenta: #e4378c;
+      --violet: #9a4dff;
+      --paper: #f4f1ea;
+      --white: #fbfaf7;
+      --max: 820px;
+      --display: "Barlow Condensed", "Arial Narrow", Impact, sans-serif;
+      --sans: "Manrope", "Segoe UI", sans-serif;
+      --pill: 999px;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: var(--sans);
+      color: #f4f8ff;
+      background:
+        radial-gradient(circle at 8% 8%, rgba(228, 55, 140, 0.35), transparent 28%),
+        radial-gradient(circle at 92% 18%, rgba(25, 198, 214, 0.28), transparent 26%),
+        linear-gradient(165deg, #071833 0%, #0b4f9c 48%, #10284a 100%);
+      line-height: 1.55;
+    }
+    a { color: inherit; }
+    img { max-width: 100%; display: block; }
+    :focus-visible { outline: 2px solid var(--sun); outline-offset: 3px; }
+    .wrap { width: min(var(--max), calc(100% - 2.2rem)); margin-inline: auto; }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.9rem 4vw;
+      background: rgba(7, 16, 36, 0.92);
+    }
+    header::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--sun), var(--magenta) 42%, var(--lagoon) 72%, var(--violet));
+    }
+    .brand {
+      font-family: var(--display);
+      letter-spacing: 0.08em;
+      text-decoration: none;
+      font-size: 1.35rem;
+    }
+    .brand small { display: block; letter-spacing: 0.14em; font-family: var(--sans); font-size: 0.68rem; color: var(--sun); }
+    nav { display: flex; gap: 1rem; align-items: center; }
+    nav a { text-decoration: none; font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; }
+    .back {
+      border: 1.5px solid var(--lagoon);
+      border-radius: var(--pill);
+      padding: 0.45rem 0.85rem;
+    }
+    main { padding: 1.6rem 0 3rem; }
+    .kicker {
+      margin: 0 0 0.35rem;
+      color: var(--sun);
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+    h1, h2 {
+      font-family: var(--display);
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      line-height: 0.92;
+      margin: 0;
+    }
+    h1 { font-size: clamp(2.4rem, 6vw, 4rem); color: #fff; }
+    .intro { margin: 0.8rem 0 1.2rem; }
+    .intro p { margin: 0.45rem 0; }
+    .checks { margin: 0.4rem 0 0; padding-left: 1.1rem; }
+    .checks li { margin: 0.3rem 0; }
+    form {
+      display: grid;
+      gap: 0.9rem;
+      background: var(--white);
+      color: #1b1a17;
+      border-radius: 28px;
+      padding: 1.4rem 1.3rem 1.3rem;
+    }
+    fieldset {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      display: grid;
+      gap: 0.45rem;
+    }
+    legend, label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .req::after { content: " *"; color: var(--magenta); }
+    input, textarea, select {
+      width: 100%;
+      border: none;
+      background: var(--paper);
+      padding: 0.75rem 0.9rem;
+      color: #1b1a17;
+      border-radius: 16px;
+      font: inherit;
+    }
+    textarea { min-height: 120px; resize: vertical; }
+    .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+    .options { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .option {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      background: var(--paper);
+      border-radius: var(--pill);
+      padding: 0.55rem 0.85rem;
+      font-size: 0.92rem;
+      font-weight: 600;
+      letter-spacing: 0;
+      text-transform: none;
+    }
+    .option input { width: auto; }
+    .hint { margin: 0; color: #5c6570; font-size: 0.82rem; font-weight: 500; letter-spacing: 0; text-transform: none; }
+    .error { color: #b42318; font-size: 0.85rem; min-height: 1.1em; margin: 0; }
+    .success {
+      display: none;
+      background: #e7f3ec;
+      color: #0f6b3c;
+      padding: 0.8rem 0.95rem;
+      border-radius: 16px;
+      margin: 0;
+    }
+    .success.show { display: block; }
+    .actions { display: flex; flex-wrap: wrap; gap: 0.7rem; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      background: var(--sun);
+      color: #142033;
+      border-radius: var(--pill);
+      padding: 0.8rem 1.15rem;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border: 1.5px solid transparent;
+      cursor: pointer;
+      font-family: inherit;
+    }
+    .btn.ghost { background: transparent; color: var(--ocean); border-color: var(--ocean); }
+    footer {
+      padding: 1.3rem 4vw 1.8rem;
+      color: rgba(244, 248, 255, 0.78);
+      font-size: 0.9rem;
+    }
+    footer a { color: var(--sun); }
+    @media (max-width: 700px) {
+      .pair { grid-template-columns: 1fr; }
+      nav { gap: 0.6rem; }
+    }
+    @media print {
+      body { background: #fff; color: #111; }
+      header, footer, .actions, .no-print { display: none; }
+      form { box-shadow: none; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a class="brand" href="ExpoTocho2027.html">EXPO TOCHO<small>Vallarta 2027</small></a>
+    <nav aria-label="Registro">
+      <a href="ExpoTocho2027.html#expositores">Expositores</a>
+      <a class="back" href="ExpoTocho2027.html">Volver a Expo</a>
+    </nav>
+  </header>
+  <main>
+    <section class="wrap">
+      <p class="kicker">Expositores · Expo Tocho Vallarta 2027</p>
+      <h1>Registro expositores</h1>
+      <div class="intro">
+        <p>Dirigido a marcas, academias, ligas, entrenadores, medios y proyectos estratégicos del ecosistema tocho.</p>
+        <p>Expo Tocho Vallarta 2027 no es un bazar, es una plataforma de posicionamiento, networking y crecimiento real dentro de la comunidad tocho a nivel nacional.</p>
+        <ul class="checks">
+          <li>Visibilidad de alto impacto</li>
+          <li>Audiencia especializada</li>
+          <li>Alianzas estratégicas</li>
+          <li>Presencia dentro del evento único en su tipo</li>
+        </ul>
+      </div>
+      <form id="registro" novalidate>
+        <div>
+          <label class="req" for="negocio">Nombre del negocio</label>
+          <input id="negocio" name="negocio" autocomplete="organization" required>
+        </div>
+        <div>
+          <label class="req" for="giro">Giro del negocio</label>
+          <input id="giro" name="giro" required>
+        </div>
+        <div>
+          <label for="logotipo">Enviar su logotipo</label>
+          <input id="logotipo" name="logotipo" type="file" accept="image/*,.pdf">
+          <p class="hint">Al enviar, adjunta este archivo en el correo que se abra.</p>
+        </div>
+        <fieldset>
+          <legend class="req">¿Qué espacio de stand requieres?</legend>
+          <div class="options">
+            <label class="option"><input type="radio" name="stand" value="3X3 ($8,000.00)" required> 3X3 ($8,000.00)</label>
+            <label class="option"><input type="radio" name="stand" value="6X3 ($10,000.00)"> 6X3 ($10,000.00)</label>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend class="req">¿Estás interesado en patrocinar alguna premiación?</legend>
+          <div class="options">
+            <label class="option"><input type="radio" name="premiacion" value="SI" required> Sí</label>
+            <label class="option"><input type="radio" name="premiacion" value="NO"> No</label>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend class="req">Boletos para el cóctel de bienvenida</legend>
+          <div class="options">
+            <label class="option"><input type="radio" name="boletos" value="1" required> 1</label>
+            <label class="option"><input type="radio" name="boletos" value="2"> 2</label>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend class="req">Datos del contacto</legend>
+          <div class="pair">
+            <div>
+              <label for="nombre">Nombre</label>
+              <input id="nombre" name="nombre" autocomplete="given-name" required>
+            </div>
+            <div>
+              <label for="apellido">Apellido</label>
+              <input id="apellido" name="apellido" autocomplete="family-name" required>
+            </div>
+          </div>
+        </fieldset>
+        <div>
+          <label class="req" for="celular">Celular</label>
+          <input id="celular" name="celular" type="tel" inputmode="numeric" autocomplete="tel" placeholder="(000) 000-0000" required>
+          <p class="hint">Formato: (000) 000-0000</p>
+        </div>
+        <div>
+          <label class="req" for="correo">E-mail</label>
+          <input id="correo" name="correo" type="email" autocomplete="email" placeholder="ejemplo@correo.com" required>
+        </div>
+        <div>
+          <label for="comprobante">Enviar el comprobante de pago o apartado</label>
+          <input id="comprobante" name="comprobante" type="file" accept="image/*,.pdf">
+          <p class="hint">Al enviar, adjunta este archivo en el correo que se abra.</p>
+        </div>
+        <div>
+          <label for="idea">Si quieres realizar alguna dinámica y/o activación, desarrolla tu idea</label>
+          <textarea id="idea" name="idea"></textarea>
+        </div>
+        <p class="error" id="form-error" role="alert"></p>
+        <p class="success" id="form-ok" role="status"></p>
+        <div class="actions">
+          <button class="btn ghost" type="button" id="imprimir">Imprimirlo</button>
+          <button class="btn" type="submit">Enviar</button>
+        </div>
+      </form>
+    </section>
+  </main>
+  <footer>
+    <div class="wrap">
+      <p>Grupo de Tocho · Av. Paseo de la Reforma #300, CDMX 06600 ·
+      <a href="tel:+525620385823">56 2038 5823</a> ·
+      <a href="mailto:info@grupodetocho.com">info@grupodetocho.com</a> ·
+      <a href="ExpoTocho2027.html">Expo Tocho 2027</a></p>
+    </div>
+  </footer>
+  <script>
+    const form = document.querySelector("#registro");
+    const error = document.querySelector("#form-error");
+    const ok = document.querySelector("#form-ok");
+    const celular = document.querySelector("#celular");
+
+    celular.addEventListener("input", () => {
+      const digits = celular.value.replace(/\D/g, "").slice(0, 10);
+      let text = digits;
+      if (digits.length > 6) text = "(" + digits.slice(0, 3) + ") " + digits.slice(3, 6) + "-" + digits.slice(6);
+      else if (digits.length > 3) text = "(" + digits.slice(0, 3) + ") " + digits.slice(3);
+      else if (digits.length > 0) text = "(" + digits;
+      celular.value = text;
+    });
+
+    document.querySelector("#imprimir").addEventListener("click", () => window.print());
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      error.textContent = "";
+      ok.classList.remove("show");
+      const data = new FormData(form);
+      const negocio = String(data.get("negocio") || "").trim();
+      const giro = String(data.get("giro") || "").trim();
+      const stand = String(data.get("stand") || "");
+      const premiacion = String(data.get("premiacion") || "");
+      const boletos = String(data.get("boletos") || "");
+      const nombre = String(data.get("nombre") || "").trim();
+      const apellido = String(data.get("apellido") || "").trim();
+      const tel = String(data.get("celular") || "").trim();
+      const correo = String(data.get("correo") || "").trim();
+      const digitos = tel.replace(/\D/g, "");
+      if (!negocio || !giro || !stand || !premiacion || !boletos || !nombre || !apellido || !tel || !correo) {
+        error.textContent = "Completa los campos obligatorios: negocio, giro, stand, premiación, boletos y contacto.";
+        return;
+      }
+      if (digitos.length !== 10) {
+        error.textContent = "El celular debe tener 10 dígitos, con formato (000) 000-0000.";
+        return;
+      }
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(correo)) {
+        error.textContent = "Escribe un correo válido.";
+        return;
+      }
+      const logo = document.querySelector("#logotipo").files[0];
+      const pago = document.querySelector("#comprobante").files[0];
+      const body = [
+        "Registro de expositores — Expo Tocho Vallarta 2027",
+        "",
+        "Nombre del negocio: " + negocio,
+        "Giro del negocio: " + giro,
+        "Logotipo: " + (logo ? logo.name : "No adjunto en el formulario"),
+        "Espacio de stand: " + stand,
+        "Patrocinar alguna premiación: " + premiacion,
+        "Boletos para el cóctel de bienvenida: " + boletos,
+        "Contacto: " + nombre + " " + apellido,
+        "Celular: " + tel,
+        "E-mail: " + correo,
+        "Comprobante de pago o apartado: " + (pago ? pago.name : "No adjunto en el formulario"),
+        "",
+        "Dinámica y/o activación:",
+        String(data.get("idea") || "").trim() || "—"
+      ].join("\n");
+      ok.textContent = "Listo. Se abrirá tu correo para enviarlo a info@grupodetocho.com. Si elegiste logotipo o comprobante, adjúntalos en ese correo.";
+      ok.classList.add("show");
+      window.location.href = "mailto:info@grupodetocho.com?subject=" +
+        encodeURIComponent("Registro expositores — " + negocio) +
+        "&body=" + encodeURIComponent(body);
+    });
+  </script>
+</body>
+</html>

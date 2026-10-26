@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Revista de Tocho · Grupo de Tocho</title>
+  <meta name="description" content="Revista de Tocho, archivo oficial del tocho bandera en México. Carta del director, Expo Tocho 2025 y entrevistas.">
+  <link rel="icon" href="https://www.grupodetocho.com/images/32x32/19562823/LogoIcono-SW774DBA7vPmKt6n1u8Uvg-XrCIcCNxBMoOkKQnbEaKdA.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Manrope:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@1,6..72,500;1,6..72,600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #101114;
+      --paper: #f4f1ea;
+      --paper-2: #e8e3d8;
+      --white: #fbfaf7;
+      --gold: #c6a15a;
+      --gold-2: #e7d3a2;
+      --sun: #f0b429;
+      --magenta: #e4378c;
+      --lagoon: #19c6d6;
+      --violet: #9a4dff;
+      --muted: #6d685e;
+      --text: #1b1a17;
+      --max: 1100px;
+      --display: "Barlow Condensed", "Arial Narrow", Impact, sans-serif;
+      --sans: "Manrope", "Segoe UI", sans-serif;
+      --serif: "Newsreader", Georgia, serif;
+      --pill: 999px;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--paper); color: var(--text); font-family: var(--sans); line-height: 1.6; }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; }
+    :focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+    .wrap { width: min(var(--max), calc(100% - 2.4rem)); margin-inline: auto; }
+    header {
+      position: sticky; top: 0; z-index: 5;
+      display: flex; justify-content: space-between; align-items: center; gap: 1rem;
+      padding: 0.9rem 4vw; background: #101114; color: var(--white);
+    }
+    header::after {
+      content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 3px;
+      background: linear-gradient(90deg, var(--sun), var(--magenta) 42%, var(--lagoon) 72%, var(--violet));
+    }
+    .brand { font-family: var(--display); letter-spacing: 0.08em; text-decoration: none; font-size: 1.35rem; }
+    .brand small { display: block; letter-spacing: 0.14em; font-family: var(--sans); font-size: 0.68rem; color: var(--gold-2); }
+    nav { display: flex; gap: 1rem; align-items: center; }
+    nav a { text-decoration: none; font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; }
+    .back { border: 1.5px solid var(--gold); border-radius: var(--pill); padding: 0.45rem 0.85rem; }
+    .hero {
+      position: relative; min-height: 68vh; margin: 1rem 1.1rem 1.6rem;
+      border-radius: 32px; overflow: hidden; display: flex; align-items: flex-end;
+      background: #101114;
+    }
+    .hero img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 40%; }
+    .hero-shade {
+      position: absolute; inset: 0;
+      background: linear-gradient(180deg, rgba(16,17,20,0.15) 10%, rgba(16,17,20,0.78) 100%);
+    }
+    .hero-copy { position: relative; z-index: 1; padding: 2.4rem 0 2.2rem; color: #fff; }
+    .kicker { margin: 0 0 0.35rem; color: var(--sun); letter-spacing: 0.16em; text-transform: uppercase; font-size: 0.75rem; font-weight: 700; }
+    h1, h2, h3 { font-family: var(--display); font-weight: 700; letter-spacing: 0.03em; line-height: 0.95; margin: 0; }
+    h1 { font-size: clamp(3.2rem, 8vw, 6rem); max-width: 12ch; }
+    .hero p { max-width: 38rem; margin: 0.8rem 0 0; }
+    .lead { font-size: 1.05rem; }
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+    .story {
+      background: var(--white); border-radius: 28px; overflow: hidden;
+      display: flex; flex-direction: column; text-decoration: none; color: inherit;
+    }
+    .story img { height: 210px; width: 100%; object-fit: cover; }
+    .story div { padding: 1rem 1.05rem 1.15rem; display: flex; flex-direction: column; gap: 0.45rem; flex: 1; }
+    .story h2 { font-size: 1.7rem; }
+    .story p { margin: 0; color: var(--muted); }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; text-decoration: none;
+      background: var(--gold); color: #142033; border-radius: var(--pill);
+      padding: 0.7rem 1rem; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em;
+      text-transform: uppercase; margin-top: auto; align-self: flex-start;
+    }
+    .letter, .article {
+      background: var(--white); border-radius: 28px; padding: 1.5rem 1.4rem 1.4rem; margin-top: 1.2rem;
+    }
+    .letter p, .article p { margin: 0.7rem 0; }
+    .sign { font-family: var(--serif); font-style: italic; font-size: 1.35rem; }
+    .article h2 { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 0.6rem; }
+    .article h3 { font-size: 1.6rem; margin: 1.2rem 0 0.4rem; }
+    .article ul { margin: 0.4rem 0 0.8rem; padding-left: 1.1rem; }
+    .article li { margin: 0.25rem 0; }
+    blockquote { margin: 1rem 0; padding-left: 1rem; border-left: 3px solid var(--gold); font-family: var(--serif); font-style: italic; font-size: 1.25rem; }
+    footer { padding: 1.6rem 4vw 2rem; color: var(--muted); font-size: 0.92rem; }
+    footer a { color: #8a6a32; }
+    @media (max-width: 860px) {
+      .grid { grid-template-columns: 1fr; }
+      .hero { margin-inline: 0.7rem; min-height: 0; }
+      .hero img { position: relative; height: 52vw; min-height: 220px; }
+      .hero-shade { background: linear-gradient(180deg, transparent, rgba(16,17,20,0.88)); }
+      nav { gap: 0.55rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a class="brand" href="DTL.html">REVISTA DE TOCHO<small>Grupo de Tocho</small></a>
+    <nav aria-label="Revista">
+      <a href="#carta">Carta</a>
+      <a href="#articulos">Artículos</a>
+      <a href="#contacto">Contacto</a>
+      <a class="back" href="DTL.html">Volver a DTL</a>
+    </nav>
+  </header>
+  <main>
+    <section class="hero" id="inicio">
+      <img src="revista-encabezado.jpg" alt="Atleta de tocho bandera corriendo en el campo al atardecer">
+      <div class="hero-shade" aria-hidden="true"></div>
+      <div class="wrap hero-copy">
+        <p class="kicker">La primera y única revista especializada del país</p>
+        <h1>Revista de Tocho</h1>
+        <p>En un deporte que crece más rápido que cualquier otro en México, la revista llega para convertirse en el archivo oficial, el punto de encuentro y la voz más confiable del tocho bandera nacional.</p>
+      </div>
+    </section>
+
+    <section class="wrap" id="carta">
+      <article class="letter">
+        <p class="kicker">Carta del director</p>
+        <h2 style="font-size:2.6rem;margin-bottom:0.6rem;">Bienvenida a la primera edición.</h2>
+        <p>Es un honor y una emoción inmensa darles la bienvenida a la primer Revista de Tocho, la revista dedicada a celebrar, promover y analizar el Tocho Bandera en México. Hoy, este proyecto deja de ser un sueño para convertirse en una realidad palpable, en un espacio donde la comunidad que tanto amamos podrá encontrarse, aprender e inspirarse.</p>
+        <p>Este camino no ha sido fácil. Como muchos sabrán, iniciar un proyecto editorial desde cero requiere de pasión, pero también de sacrificio y noches en vela. Por ello, antes de hablar de tocho bandera, debo hacer una pausa para reconocer el soporte fundamental que me ha traído hasta este kickoff.</p>
+        <p>Quiero expresar mi más profundo agradecimiento a mi familia, ese pilar inquebrantable de mi vida. Sus palabras de aliento y su fe ciega en esta visión fueron el motor que me impulsó a seguir adelante. Gracias a mis padres, hermanos y amigos por enseñarme la disciplina y el espíritu de equipo que se necesitan tanto dentro como fuera del campo.</p>
+        <p>Y de manera muy especial, quiero agradecer a mi esposa, mi compañera de vida y mi mejor quarterback. Gracias por su paciencia infinita, por ser mi crítica constructiva y, sobre todo, por entenderme y apoyarme incondicionalmente mientras convertía la sala y comedor de la casa en mi oficina editorial. Este logro es tan tuyo como mío.</p>
+        <p>Finalmente, y con todo mi corazón, a mis dos hijos. Son mi mayor motivación. Espero que esta revista sea una muestra de que, con esfuerzo y dedicación, cualquier meta es alcanzable. Verán en estas páginas el fruto de la perseverancia, y espero que les sirva de ejemplo en el campo de juego de sus propias vidas. Jugar a la defensiva o a la ofensiva es solo un juego, pero la pasión con la que se juega es una lección de vida.</p>
+        <p>En este primer número encontrarán entrevistas exclusivas, análisis, historias inspiradoras de ligas locales y la cobertura más completa del panorama nacional.</p>
+        <p>¡Estamos listos para hacer historia!</p>
+        <p>Les invito a unirse a este emocionante viaje.</p>
+        <p class="sign">Sergio A. Osio Saldaña</p>
+      </article>
+    </section>
+
+    <section class="wrap" id="articulos" style="margin-top:1.4rem;">
+      <p class="kicker">En este número</p>
+      <div class="grid">
+        <a class="story" href="#expo">
+          <img src="https://www.grupodetocho.com/images/1024%2C694x520%2B40%2B0/22026307/Capturadepantalla2025-12-29193924-numWYEEqLqJTgj5vCrUUwg.png" alt="Jugadores de tocho bandera disputando un pase en la Expo">
+          <div>
+            <h2>Expo Tocho 2025: El Latido del Flag Football en México</h2>
+            <p>El Deportivo Miguel Alemán, sede del despegue histórico.</p>
+            <span class="btn">Leer</span>
+          </div>
+        </a>
+        <a class="story" href="#autoestima">
+          <img src="https://www.grupodetocho.com/images/1024%2C2279x1707%2B140%2B0/22026352/La-autoestima-infantil-como-Cimiento-del-Desarrollo-Infantil-tDy4t8s-cUvICBP1uQ3yrA.png" alt="Niño frente a un pizarrón con brazos dibujados">
+          <div>
+            <h2>Desarrollo del autoestima en mi hijo</h2>
+            <p>Akira Esqueda</p>
+            <span class="btn">Leer</span>
+          </div>
+        </a>
+        <a class="story" href="#lesiones">
+          <img src="https://www.grupodetocho.com/images/1024%2C1503x1125%2B92%2B0/22026400/GlassBONE-Ortopedia-IGEA-KatWXTmK1TKe83I6l2vjhA.jpeg" alt="Modelo de una rodilla durante una revisión ortopédica">
+          <div>
+            <h2>“¿Cirugía o manejo conservador? Cómo identificar lesiones que requieren intervención”</h2>
+            <p>Entrevista al Dr. Gustavo Alonso Ríos López, ortopedista y traumatólogo.</p>
+            <span class="btn">Leer</span>
+          </div>
+        </a>
+      </div>
+
+      <article class="article" id="expo">
+        <p class="kicker">Crónica</p>
+        <h2>Expo Tocho 2025: El Latido del Flag Football en México</h2>
+        <p>El Deportivo Miguel Alemán, sede del despegue histórico.</p>
+        <p>Ciudad de México, 16 y 17 de agosto de 2025. El tocho bandera, o flag football, ha dejado de ser una actividad de nicho para convertirse en un fenómeno de fervor nacional. Su inclusión como deporte olímpico en 2028 y los triunfos de la Selección Nacional Femenil y Varonil no solo han elevado su estatus, sino que han encendido la llama de una comunidad ansiosa por un espacio de convergencia. Ese anhelo encontró su respuesta en la primera Expo dedicada íntegramente al tocho bandera en la historia de México.</p>
+        <p>La cita fue en un lugar emblemático para el deporte capitalino: el Deportivo Miguel Alemán, en la colonia Lindavista de la CDMX. Desde antes de la apertura de puertas, aficionados, jugadores, entrenadores y familias formaban filas. La Expo fue la confirmación del poderío y la pasión que este deporte sin contacto ha gestado en el país. Se abrieron las puertas de la primera de muchas ediciones que cimentarán al tocho bandera como un pilar del deporte mexicano.</p>
+        <p>El tocho bandera en México es un deporte de profundas raíces regionales, y aquella edición hizo honor a esa diversidad. La afluencia no fue únicamente de la capital; los estados respondieron con entusiasmo. Representantes de ligas y equipos de Saltillo, Puebla, Morelos, el Estado de México y la propia CDMX convivieron en los campos, intercambiando experiencias y rivalidades amistosas.</p>
+        <h3>Legado y horizonte</h3>
+        <p>El telón de aquella primera Expo cayó la noche del 17 de agosto con la sensación de haber presenciado un evento que marcó un antes y un después. Lo que comenzó como un proyecto ambicioso se materializó en una plataforma de crecimiento. El éxito de la primera Expo es un testimonio de la labor de jugadores, ligas, entrenadores y patrocinadores.</p>
+        <p>El impacto va más allá de los premios y los stands. Radica en la legitimación de la disciplina. Por primera vez, el tocho bandera mexicano contó con un espacio propio, un punto de encuentro anual. El nivel de profesionalismo de los más de 50 expositores mostró que la industria alrededor del deporte está creciendo.</p>
+        <p>La Expo sirvió para competir, comprar y crear sinergias. Se establecieron acuerdos entre ligas estatales, se cerraron patrocinios y se sembraron semillas para nuevas academias, especialmente en Saltillo, Puebla y Morelos.</p>
+        <blockquote>La primera Expo Tocho encendió el faro del tocho bandera en México. La convocatoria vigente de este proyecto es Expo Tocho Vallarta 2027.</blockquote>
+        <p><a class="btn" href="ExpoTocho2027.html">Entrar a Expo Tocho 2027</a></p>
+      </article>
+
+      <article class="article" id="autoestima">
+        <p class="kicker">Akira Esqueda</p>
+        <h2>Desarrollo del autoestima en mi hijo</h2>
+        <p>La mayoría de los motivos de consulta que tengo por parte de los padres de familia es por un tema clave para el desarrollo de una mentalidad capaz de enfrentar la adversidad, generar confianza tanto en sus habilidades como en sus conocimientos a la hora de tomar riesgos, superar obstáculos y perseverar la calma enfocado en el resultado ante la adversidad, desarrollar una actitud positiva ante las críticas y nunca dejar de luchar.</p>
+        <p>A esta necesidad de los papás se le conoce como autoestima. Podría definirse como la valoración y percepción que tenemos de nosotros mismos: la forma en cómo nos vemos y sentimos acerca de nuestros logros, nuestras habilidades y fortalezas para generar confianza, motivación y bienestar general.</p>
+        <p>Siempre hay un factor muy importante cuando se trabaja el autoestima: el poder que tienen las personas para meter ruido en cualquier tipo de pensamiento. A pesar de tener un autoestima muy fuerte, siempre hay un pensamiento que hace dudar de la propia capacidad.</p>
+        <p>Para entender cómo se desarrolla la personalidad de los hijos, lo primero es que cualquier persona construye su identidad a partir del contexto en donde vive. Todos respondemos a una expectativa que se tiene de nosotros. Todo empieza con la elección del nombre: se pone un nombre a partir de una imagen mental. En otras palabras, se le pone al hijo un nombre esperando que sea como la persona que lo inspiró, o el significante que se le atribuye. A partir de ahí se fantasea con cómo serán al crecer.</p>
+        <p>Esa primera imagen traza un bosquejo de un mapa para orientar a los hijos hacia el éxito. Ese primer mapa está basado en la idea de éxito de los padres, producto de sus experiencias, traumas y necesidades. Al inicio está bien, pero a medida que el hijo crece y es más consciente de sus gustos, vivencias y necesidades, ese mapa debe ir cambiando.</p>
+        <p>Así se crea el primer esquema de la personalidad de un niño. Jacques Lacan menciona que el niño tiene una sensación de poder a través de la mamá, porque la mamá ama al hijo por el simple hecho de ser su hijo. En el deporte, los padres aman a sus hijos por el simple hecho de ser sus hijos, y eso empodera al niño para empezar un deporte.</p>
+        <p>El niño hace deporte porque los padres se emocionan por ello. Si no se muestra interés, el niño lo abandonará eventualmente. Cuando ve el compromiso, la entrega y el entusiasmo y orgullo cuando intenta cada movimiento, empieza a generar una mentalidad capaz de enfrentar cosas que es posible no le gusten del todo. Esa sensación de poder le genera un plano imaginario, lo que él cree que es, a partir de las expectativas y de lo que dicen los papás. En pocas palabras, el niño genera un amor propio por lo que es para sus papás.</p>
+        <p>A medida que evoluciona y logra objetivos, despierta el interés del entrenador y puede ir ganando estatus en su equipo. Poco a poco se separa de la opinión de los papás y genera independencia y crecimiento a partir de lo que puede hacer.</p>
+        <p>Reconoce que puede ser admirado por los demás, además de sus padres. Ahí empieza a amar lo que hace. En este punto, el autoestima cambia del ser a lo que puede hacer.</p>
+        <p>Se genera un plano simbólico, en el cual el niño empieza a ser lo que es capaz de hacer, y no se queda en el plano imaginario de ser lo que cree que los demás piensan de él. El atleta genera modelos que lo guían al rendimiento ideal. Comienza a ganar certeza, seguridad y confianza para generar su realidad: sabe quién es y quién puede llegar a ser en función de sus acciones, no solo de sus atributos.</p>
+        <p>El autoestima se gestiona a partir del rendimiento y no solo de los resultados. El atleta busca una mejora continua sin depender de lo que la gente opine del resultado de la competencia.</p>
+        <p>La unión del plano simbólico y el plano imaginario necesita alinearse. Para lograrlo, padres y entrenador tienen que ir en el mismo sentido. Si el papá tiene mayor influencia que el entrenador, el plano imaginario domina y se altera la estabilidad. Si la influencia del entrenador es mayor, la imagen que representa el atleta altera su realidad: se ven atletas que hablan de ellos en tercera persona o se dejan manipular por un tercero, porque creen que solo son el símbolo de lo que representan.</p>
+        <p>Esa estabilidad mantiene una mentalidad equilibrada de lo que son, con enfoque a rendimiento, y de lo que pueden ser, con enfoque a resultados. El equilibrio genera competitividad para afrontar un mal resultado y combatividad para no conformarse. El autoestima no depende de lo que los demás ven o dicen, sino de lo que el atleta es capaz de hacer y del resultado que pueda generar.</p>
+      </article>
+
+      <article class="article" id="lesiones">
+        <p class="kicker">Entrevista</p>
+        <h2>“¿Cirugía o manejo conservador? Cómo identificar lesiones que requieren intervención”</h2>
+        <p>Entrevista al Dr. Gustavo Alonso Ríos López, ortopedista y traumatólogo.</p>
+        <h3>Introducción</h3>
+        <p>En el mundo de la ortopedia, una duda común entre pacientes, y a veces entre médicos de atención primaria, es determinar cuándo una lesión necesita cirugía y cuándo puede manejarse de manera conservadora. Para aclararlo, conversamos con el Dr. Gustavo Alonso Ríos López, quien explica qué factores determinan la ruta a seguir.</p>
+        <h3>La entrevista</h3>
+        <p><strong>Revista:</strong> Doctor, ¿cuál es el primer criterio que se analiza al valorar una lesión musculoesquelética?</p>
+        <p><strong>Dr. Gustavo Ríos:</strong> Lo primero es identificar la gravedad estructural del daño: si hay una ruptura completa, una fractura inestable o una lesión que compromete funciones esenciales. Es decir, evaluamos si la anatomía quedó tan alterada que el cuerpo por sí solo no podrá repararla adecuadamente.</p>
+        <p><strong>Revista:</strong> ¿Cuáles son los signos de alarma que sugieren que una lesión podría requerir cirugía?</p>
+        <p><strong>Dr. Gustavo Ríos:</strong> Hay varios. Los principales son:</p>
+        <ul>
+          <li>Dolor severo y persistente que no mejora con analgésicos.</li>
+          <li>Pérdida notable de la función, como no poder cargar peso o mover una articulación.</li>
+          <li>Inestabilidad, por ejemplo, rodillas que ceden o tobillos que no se pueden apoyar.</li>
+          <li>Deformidad evidente, como desviaciones óseas.</li>
+          <li>Déficit neurológico, como adormecimiento o pérdida de fuerza.</li>
+        </ul>
+        <p>Cuando cualquiera de estos aparece, se sospecha una lesión que posiblemente necesite intervención quirúrgica.</p>
+        <p><strong>Revista:</strong> Hablando de fracturas, ¿qué diferencia una fractura para cirugía de una que puede manejarse con yeso o férula?</p>
+        <p><strong>Dr. Gustavo Ríos:</strong> Las fracturas no desplazadas y estables casi siempre se tratan de forma conservadora. Pero si hay desplazamiento, si afecta la articulación, si compromete la alineación o si existe riesgo de que no consolide bien, entonces la cirugía ofrece mejores resultados y reduce secuelas.</p>
+        <p><strong>Revista:</strong> ¿Y en el caso de lesiones deportivas como esguinces o rupturas de ligamentos?</p>
+        <p><strong>Dr. Gustavo Ríos:</strong> La mayoría de los esguinces se manejan sin cirugía. Pero en rupturas completas de ligamentos, como el cruzado anterior, la decisión depende de la edad del paciente, su nivel de actividad y sus expectativas. Un deportista competitivo casi siempre se beneficia de cirugía; alguien sedentario puede mejorar solo con rehabilitación.</p>
+        <p><strong>Revista:</strong> ¿Qué hay de los tendones?</p>
+        <p><strong>Dr. Gustavo Ríos:</strong> Los tendones completamente rotos, como el del bíceps distal o el tendón de Aquiles, suelen requerir cirugía para recuperar la fuerza y la función. Si son rupturas parciales, el manejo conservador con inmovilización y fisioterapia funciona muy bien.</p>
+        <p><strong>Revista:</strong> ¿Qué papel juega la imagenología en esta decisión?</p>
+        <p><strong>Dr. Gustavo Ríos:</strong> Es fundamental. Radiografías, resonancias y ecografías permiten ver la lesión con precisión. Pero la imagen nunca se interpreta sola: siempre se correlaciona con los síntomas y la exploración física del paciente.</p>
+        <p><strong>Revista:</strong> Para el paciente común, ¿qué señales sugieren que debe acudir a un ortopedista y no solo manejarlo en casa?</p>
+        <p><strong>Dr. Gustavo Ríos:</strong> Cualquier lesión con:</p>
+        <ul>
+          <li>Incapacidad para mover una articulación.</li>
+          <li>Inflamación que no baja en 48 horas.</li>
+          <li>Hematomas extensos.</li>
+          <li>Dolor que no permite apoyar la extremidad.</li>
+          <li>Chasquidos audibles al momento de la lesión.</li>
+        </ul>
+        <p>La evaluación temprana evita complicaciones y acelera la recuperación.</p>
+        <p><strong>Revista:</strong> Finalmente, ¿cómo decide usted entre cirugía y manejo conservador?</p>
+        <p><strong>Dr. Gustavo Ríos:</strong> Busco siempre la mejor recuperación funcional a largo plazo. Si el cuerpo puede sanar bien sin cirugía, la evitamos. Pero si no intervenir implicaría dolor crónico, limitaciones o deformidades, entonces la cirugía es la mejor opción.</p>
+        <h3>Conclusión</h3>
+        <p>Determinar cuándo operar no es solo cuestión de ver la lesión, sino de entender el contexto, el nivel de actividad, la edad y los objetivos del paciente. Como explica el Dr. Gustavo Ríos, la clave está en una valoración integral y personalizada. Lo importante es no ignorar una lesión y buscar una evaluación temprana para evitar secuelas.</p>
+      </article>
+    </section>
+  </main>
+  <footer id="contacto">
+    <div class="wrap">
+      <p>No dudes en contactarnos si tienes alguna pregunta sobre nuestros proyectos.</p>
+      <p>Grupo de Tocho · Av. Paseo de la Reforma #300, CDMX 06600 ·
+      <a href="tel:+525620385823">56 2038 5823</a> ·
+      <a href="mailto:info@grupodetocho.com">info@grupodetocho.com</a> ·
+      <a href="DTL.html">Portal DTL</a></p>
+    </div>
+  </footer>
+</body>
+</html>

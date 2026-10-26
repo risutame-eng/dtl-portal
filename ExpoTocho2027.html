@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Expo Tocho Vallarta 2027 · Convocatoria oficial</title>
+  <meta name="description" content="Convocatoria oficial de Expo Tocho Vallarta 2027. Torneo IFAF, categorías, expositores y registros de Grupo de Tocho.">
+  <link rel="icon" href="https://www.grupodetocho.com/images/32x32/19562823/LogoIcono-SW774DBA7vPmKt6n1u8Uvg-XrCIcCNxBMoOkKQnbEaKdA.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #101114;
+      --sun: #f0b429;
+      --ocean: #0b4f9c;
+      --lagoon: #19c6d6;
+      --magenta: #e4378c;
+      --violet: #9a4dff;
+      --paper: #f4f1ea;
+      --white: #fbfaf7;
+      --muted: #5c6570;
+      --max: 1100px;
+      --display: "Barlow Condensed", "Arial Narrow", Impact, sans-serif;
+      --sans: "Manrope", "Segoe UI", sans-serif;
+      --pill: 999px;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: var(--sans);
+      color: #f4f8ff;
+      background:
+        radial-gradient(circle at 8% 8%, rgba(228, 55, 140, 0.35), transparent 28%),
+        radial-gradient(circle at 92% 18%, rgba(25, 198, 214, 0.28), transparent 26%),
+        linear-gradient(165deg, #071833 0%, #0b4f9c 48%, #10284a 100%);
+      line-height: 1.55;
+    }
+    a { color: inherit; }
+    img { max-width: 100%; display: block; }
+    :focus-visible { outline: 2px solid var(--sun); outline-offset: 3px; }
+    .wrap { width: min(var(--max), calc(100% - 2.2rem)); margin-inline: auto; }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.9rem 4vw;
+      background: rgba(7, 16, 36, 0.92);
+    }
+    header::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--sun), var(--magenta) 42%, var(--lagoon) 72%, var(--violet));
+    }
+    .brand {
+      font-family: var(--display);
+      letter-spacing: 0.08em;
+      text-decoration: none;
+      font-size: 1.35rem;
+    }
+    .brand small { display: block; letter-spacing: 0.14em; font-family: var(--sans); font-size: 0.68rem; color: var(--sun); }
+    nav { display: flex; gap: 1rem; align-items: center; }
+    nav a { text-decoration: none; font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; }
+    .back {
+      border: 1.5px solid var(--lagoon);
+      border-radius: var(--pill);
+      padding: 0.45rem 0.85rem;
+    }
+    main { padding: 2.4rem 0 3rem; }
+    .kicker {
+      margin: 0 0 0.35rem;
+      color: var(--sun);
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+    h1, h2, h3 {
+      font-family: var(--display);
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      line-height: 0.92;
+      margin: 0;
+    }
+    .hero {
+      position: relative;
+      min-height: 72vh;
+      margin: 1rem 1.1rem 1.6rem;
+      border-radius: 32px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(180deg, #9ad4f6 0%, #3c9ed2 32%, #1c72ae 60%, #e6c48c 100%);
+    }
+    .hero-photo {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 42%;
+      -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 26%);
+      mask-image: linear-gradient(180deg, transparent 0%, #000 26%);
+    }
+    .hero-shade {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(8, 28, 52, 0.28) 0%, rgba(8, 28, 52, 0.08) 42%, rgba(8, 28, 52, 0.05) 100%),
+        linear-gradient(180deg, rgba(8, 28, 52, 0.02) 30%, rgba(8, 28, 52, 0.28) 100%);
+    }
+    .hero-copy {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: minmax(280px, 640px) minmax(240px, 380px);
+      gap: 1.4rem;
+      align-items: center;
+      padding: 2.4rem 0;
+    }
+    .logo-title { margin: 0; }
+    .logo-title img {
+      width: min(100%, 620px);
+      height: auto;
+      background: transparent;
+      border-radius: 0;
+      box-shadow: none;
+      filter: drop-shadow(0 16px 18px rgba(0, 0, 0, 0.35));
+    }
+    .hero-panel {
+      background: rgba(7, 20, 44, 0.62);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 24px;
+      padding: 1.15rem 1.2rem 1.25rem;
+      backdrop-filter: blur(8px);
+    }
+    .hero-panel p { margin: 0; color: rgba(244, 248, 255, 0.9); }
+    .layout { display: grid; grid-template-columns: minmax(240px, 0.82fr) 1.18fr; gap: 1.3rem; align-items: start; }
+    .poster {
+      margin: 0;
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
+    }
+    .checks { margin: 0.2rem 0 0; padding-left: 1.1rem; }
+    .checks li { margin: 0.35rem 0; }
+    .actions { display: flex; flex-wrap: wrap; gap: 0.7rem; margin-top: 1.3rem; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      background: var(--sun);
+      color: #142033;
+      border-radius: var(--pill);
+      padding: 0.8rem 1.15rem;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border: 1.5px solid transparent;
+    }
+    .btn.ghost { background: transparent; color: #fff; border-color: var(--lagoon); }
+    .block { margin-top: 1.3rem; }
+    .expo-card {
+      background: var(--ink);
+      border-radius: 28px;
+      padding: 1.4rem;
+    }
+    .expo-card a:not(.btn) { color: var(--lagoon); word-break: break-all; }
+    .tabs { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-bottom: 0.8rem; }
+    .tabs button {
+      background: transparent;
+      color: #fff;
+      border: none;
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.38);
+      border-radius: var(--pill);
+      padding: 0.5rem 0.9rem;
+      font: inherit;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+    .tabs button[aria-selected="true"] { background: var(--sun); color: #142033; box-shadow: none; }
+    .panel { background: var(--white); color: #1b1a17; border-radius: 28px; padding: 1.3rem; }
+    .panel[hidden] { display: none; }
+    .panel h2 { font-size: 2rem; margin-bottom: 0.7rem; }
+    .cats { display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; }
+    .cat { background: var(--paper); border-radius: 18px; padding: 0.9rem 1rem; }
+    .cat strong { display: block; font-family: var(--display); font-size: 1.35rem; }
+    .cat:nth-child(4n + 1) { box-shadow: inset 4px 0 0 var(--sun); }
+    .cat:nth-child(4n + 2) { box-shadow: inset 4px 0 0 var(--lagoon); }
+    .cat:nth-child(4n + 3) { box-shadow: inset 4px 0 0 var(--magenta); }
+    .cat:nth-child(4n) { box-shadow: inset 4px 0 0 var(--violet); }
+    .note { margin: 0.9rem 0 0; background: #f7f1e2; border-radius: 16px; padding: 0.85rem 0.95rem; }
+    .note a { color: var(--ocean); word-break: break-all; }
+    footer {
+      padding: 1.3rem 4vw 1.8rem;
+      color: rgba(244, 248, 255, 0.78);
+      font-size: 0.9rem;
+    }
+    footer a { color: var(--sun); }
+    @media (max-width: 860px) {
+      .hero { min-height: 0; margin-inline: 0.7rem; }
+      .hero-copy, .layout, .cats { grid-template-columns: 1fr; }
+      .hero-photo { position: absolute; inset: 0; width: 100%; height: 100%; }
+      .hero-shade { background: linear-gradient(180deg, rgba(5, 16, 36, 0.05), rgba(5, 16, 36, 0.72)); }
+      .hero-copy { padding: 1.2rem 1rem 1.4rem; }
+      nav { gap: 0.6rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a class="brand" href="ExpoTocho2027.html">EXPO TOCHO<small>Vallarta 2027</small></a>
+    <nav aria-label="Expo">
+      <a href="#convocatoria">Convocatoria</a>
+      <a href="#categorias">Categorías</a>
+      <a href="#registros">Registros</a>
+      <a class="back" href="DTL.html">Volver a DTL</a>
+    </nav>
+  </header>
+  <main>
+    <section class="hero" id="convocatoria">
+      <img class="hero-photo" src="expo-playa-2027-hq.jpg?v=hq3" alt="Jugadora de tocho bandera corriendo sobre la arena en Puerto Vallarta">
+      <div class="hero-shade" aria-hidden="true"></div>
+      <div class="wrap hero-copy">
+        <h1 class="logo-title">
+          <img src="logo-expo-vallarta-2027.png?v=bahia" alt="Expo Tocho Vallarta, Bahía de Banderas 2027">
+        </h1>
+        <div class="hero-panel">
+          <p class="kicker">Convocatoria oficial</p>
+          <p>Equipos, clínicas, expositores y formato IFAF, con la identidad de Puerto Vallarta.</p>
+          <div class="actions" id="registros">
+            <a class="btn" href="https://form.jotform.com/241085307213851" target="_blank" rel="noopener">Registro del torneo</a>
+            <a class="btn ghost" href="Reg_expositores.html">Registro de expositores</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="wrap">
+      <div class="layout">
+        <figure class="poster">
+          <img src="expo-vallarta-2027.png" alt="Convocatoria oficial de Expo Tocho Vallarta 2027">
+        </figure>
+        <div>
+          <p class="kicker">Expo Tocho</p>
+          <h2 style="font-size:2.4rem;margin:0.2rem 0 0.7rem;">Forma parte de este torneo.</h2>
+          <p>Nos reuniremos para competir, convivir y vivir la experiencia de Expo Tocho.</p>
+          <ul class="checks">
+            <li>Torneo: equipos y ligas conviviendo y compitiendo</li>
+            <li>Invitados especiales: jugadores, coaches y figuras del medio</li>
+            <li>Charlas, clínicas y talleres sobre entrenamiento, nutrición y estrategia</li>
+            <li>Conexiones y oportunidades: reclutamiento, alianzas y crecimiento de ligas</li>
+          </ul>
+          <p>Formato IFAF 5 vs 5. La categoría mixta se juega 6 vs 6 IFAF con pitch. Tres juegos garantizados. Con base en las estadísticas del torneo se definen las divisiones Silver y Golden. Descuento especial al inscribir dos o más categorías.</p>
+        </div>
+      </div>
+      <div class="layout block" id="categorias">
+        <aside class="expo-card" id="expositores">
+          <p class="kicker">Expositores</p>
+          <h2 style="font-size:2.3rem;margin:0.3rem 0 0.6rem;">Expositores</h2>
+          <p>Dirigido a marcas, academias, ligas, entrenadores, medios y proyectos estratégicos del ecosistema tocho.</p>
+          <p>Expo Tocho Vallarta 2027 no es un bazar, es una plataforma de posicionamiento, networking y crecimiento real dentro de la comunidad tocho a nivel nacional.</p>
+          <ul class="checks">
+            <li>Visibilidad de alto impacto</li>
+            <li>Audiencia especializada</li>
+            <li>Alianzas estratégicas</li>
+            <li>Presencia dentro del evento único en su tipo</li>
+          </ul>
+          <p>Registro oficial de expositores:</p>
+          <p><a href="https://form.jotform.com/253208552948868" target="_blank" rel="noopener">https://form.jotform.com/253208552948868</a></p>
+          <p><a class="btn" href="Reg_expositores.html">Registro de expositores</a></p>
+        </aside>
+        <div>
+          <div class="tabs" role="tablist" aria-label="Categorías de Expo Tocho">
+            <button type="button" role="tab" id="tab-inf" aria-controls="panel-inf" aria-selected="true">Infantiles</button>
+            <button type="button" role="tab" id="tab-lib" aria-controls="panel-lib" aria-selected="false">Libres</button>
+            <button type="button" role="tab" id="tab-exp" aria-controls="panel-exp" aria-selected="false">Expositores</button>
+          </div>
+          <div class="panel" id="panel-inf" role="tabpanel" aria-labelledby="tab-inf">
+            <h2>Categorías infantiles</h2>
+            <div class="cats">
+              <div class="cat"><strong>Baby</strong>6 a 8 años</div>
+              <div class="cat"><strong>Infantil</strong>9 a 11 años</div>
+              <div class="cat"><strong>Junior</strong>12 a 14 años</div>
+              <div class="cat"><strong>Juvenil</strong>15 a 17 años</div>
+            </div>
+            <p class="note">Roster obligatorio con CURP y credencial escolar. Formato IFAF 5 vs 5 y tres juegos garantizados.</p>
+          </div>
+          <div class="panel" id="panel-lib" role="tabpanel" aria-labelledby="tab-lib" hidden>
+            <h2>Categorías libres</h2>
+            <div class="cats">
+              <div class="cat"><strong>Varonil</strong>Competencia libre</div>
+              <div class="cat"><strong>Femenil</strong>Competencia libre</div>
+              <div class="cat"><strong>Mixto</strong>6 vs 6 IFAF con pitch</div>
+              <div class="cat"><strong>+35</strong>Categoría máster</div>
+            </div>
+            <p class="note">Formato IFAF 5 vs 5. La categoría mixta se juega 6 vs 6 IFAF con pitch. Tres juegos garantizados. Con base en las estadísticas del torneo se definen las divisiones Silver y Golden. Descuento especial al inscribir dos o más categorías.</p>
+          </div>
+          <div class="panel" id="panel-exp" role="tabpanel" aria-labelledby="tab-exp" hidden>
+            <h2>Expositores</h2>
+            <p>Dirigido a marcas, academias, ligas, entrenadores, medios y proyectos estratégicos del ecosistema tocho.</p>
+            <p>Expo Tocho Vallarta 2027 no es un bazar, es una plataforma de posicionamiento, networking y crecimiento real dentro de la comunidad tocho a nivel nacional.</p>
+            <ul class="checks">
+              <li>Visibilidad de alto impacto</li>
+              <li>Audiencia especializada</li>
+              <li>Alianzas estratégicas</li>
+              <li>Presencia dentro del evento único en su tipo</li>
+            </ul>
+            <p class="note">Registro oficial de expositores: <a href="https://form.jotform.com/253208552948868" target="_blank" rel="noopener">https://form.jotform.com/253208552948868</a></p>
+            <p><a class="btn" href="Reg_expositores.html" style="margin-top:0.9rem;">Registro de expositores</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="wrap">
+      <p>No dudes en contactarnos si tienes alguna pregunta sobre nuestros proyectos.</p>
+      <p>Grupo de Tocho · Av. Paseo de la Reforma #300, CDMX 06600 ·
+      <a href="tel:+525620385823">56 2038 5823</a> ·
+      <a href="mailto:info@grupodetocho.com">info@grupodetocho.com</a> ·
+      <a href="DTL.html">Portal DTL</a></p>
+    </div>
+  </footer>
+  <script>
+    const tabs = [...document.querySelectorAll('[role="tab"]')];
+    function selectTab(tab) {
+      tabs.forEach((item) => {
+        const selected = item === tab;
+        item.setAttribute("aria-selected", String(selected));
+        item.tabIndex = selected ? 0 : -1;
+        document.getElementById(item.getAttribute("aria-controls")).hidden = !selected;
+      });
+      tab.focus();
+    }
+    tabs.forEach((tab, index) => {
+      tab.tabIndex = index === 0 ? 0 : -1;
+      tab.addEventListener("click", () => selectTab(tab));
+      tab.addEventListener("keydown", (event) => {
+        const current = tabs.indexOf(tab);
+        if (event.key === "ArrowRight") {
+          event.preventDefault();
+          selectTab(tabs[(current + 1) % tabs.length]);
+        }
+        if (event.key === "ArrowLeft") {
+          event.preventDefault();
+          selectTab(tabs[(current - 1 + tabs.length) % tabs.length]);
+        }
+      });
+    });
+  </script>
+</body>
+</html>

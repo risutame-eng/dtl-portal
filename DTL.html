@@ -1,0 +1,1167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DTL · Liga de Tocho — Grupo de Tocho</title>
+  <meta name="description" content="DTL es la liga de flag football de Grupo de Tocho. Jornadas dominicales, Expo Tocho Vallarta 2027, revista, clothing y centro de formación.">
+  <meta name="keywords" content="tocho, tochito, flag football, DTL, De Tocho League, Expo Tocho, Revista de Tocho, Centro de Formación DTL, DTocho Clothing, Running Tocho">
+  <meta name="theme-color" content="#101114">
+  <link rel="canonical" href="https://www.grupodetocho.com/">
+  <link rel="icon" href="https://www.grupodetocho.com/images/32x32/19562823/LogoIcono-SW774DBA7vPmKt6n1u8Uvg-XrCIcCNxBMoOkKQnbEaKdA.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Manrope:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@1,6..72,500;1,6..72,600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #101114;
+      --ink-2: #191b20;
+      --ink-3: #24272e;
+      --paper: #f4f1ea;
+      --paper-2: #e8e3d8;
+      --white: #fbfaf7;
+      --gold: #c6a15a;
+      --gold-2: #e7d3a2;
+      --sun: #f0b429;
+      --ocean: #0b4f9c;
+      --lagoon: #19c6d6;
+      --magenta: #e4378c;
+      --violet: #9a4dff;
+      --muted: #6d685e;
+      --text: #1b1a17;
+      --line: rgba(16, 17, 20, 0.12);
+      --line-light: rgba(251, 250, 247, 0.14);
+      --danger: #8e2d2d;
+      --ok: #1f6b45;
+      --shadow: 0 24px 60px rgba(16, 17, 20, 0.16);
+      --header: 76px;
+      --max: 1160px;
+      --serif: "Newsreader", Georgia, serif;
+      --sans: "Manrope", "Segoe UI", sans-serif;
+      --display: "Barlow Condensed", "Arial Narrow", Impact, sans-serif;
+      --radius: 24px;
+      --pill: 999px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background:
+        radial-gradient(ellipse at 0% 18%, rgba(198, 161, 90, 0.18), transparent 34%),
+        radial-gradient(ellipse at 100% 72%, rgba(25, 198, 214, 0.08), transparent 28%),
+        var(--paper);
+      color: var(--text);
+      font-family: var(--sans);
+      font-size: 16.5px;
+      line-height: 1.6;
+    }
+    img { max-width: 100%; display: block; }
+    figure { margin: 0; }
+    a { color: inherit; }
+    button, input, textarea { font: inherit; }
+    :focus-visible {
+      outline: 2px solid var(--gold);
+      outline-offset: 3px;
+    }
+    .skip {
+      position: absolute;
+      left: 1rem;
+      top: -4rem;
+      background: var(--gold);
+      color: var(--ink);
+      padding: 0.6rem 0.9rem;
+      z-index: 20;
+    }
+    .skip:focus { top: 1rem; }
+
+    .wrap {
+      width: min(var(--max), calc(100% - 2.4rem));
+      margin-inline: auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      height: var(--header);
+      display: flex;
+      align-items: center;
+      background: #101114;
+      color: var(--white);
+      border-bottom: 1px solid var(--line-light);
+      box-shadow: inset 0 -3px 0 var(--sun);
+    }
+    .site-header::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--sun), var(--magenta) 42%, var(--lagoon) 72%, var(--violet));
+    }
+    .header-inner {
+      width: min(var(--max), calc(100% - 2.4rem));
+      margin-inline: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+    }
+    .brand-logo {
+      height: 64px;
+      width: auto;
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 1.15rem;
+    }
+    .nav a {
+      text-decoration: none;
+      color: rgba(251, 250, 247, 0.82);
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+    .nav a:hover { color: var(--white); }
+    .nav-cta {
+      border: none;
+      color: var(--ink) !important;
+      background: var(--gold);
+      padding: 0.5rem 0.95rem;
+      border-radius: var(--pill);
+    }
+    .menu-btn {
+      display: none;
+      background: transparent;
+      color: var(--white);
+      border: 1px solid var(--line-light);
+      padding: 0.5rem 0.9rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      border-radius: var(--pill);
+    }
+
+    .hero {
+      position: relative;
+      padding: 1.15rem 1.15rem 1.6rem;
+      min-height: calc(100vh - var(--header));
+      display: grid;
+      align-items: center;
+      background:
+        radial-gradient(ellipse at 8% 90%, rgba(198, 161, 90, 0.22), transparent 36%),
+        radial-gradient(ellipse at 92% 8%, rgba(228, 55, 140, 0.16), transparent 32%),
+        radial-gradient(ellipse at 70% 80%, rgba(25, 198, 214, 0.1), transparent 28%),
+        #0c0d11;
+      color: var(--white);
+      overflow: hidden;
+    }
+    .hero-stage {
+      width: min(1280px, 100%);
+      margin-inline: auto;
+      display: grid;
+      grid-template-columns: minmax(0, 1.28fr) minmax(300px, 0.78fr);
+      align-items: center;
+    }
+    .hero-media {
+      position: relative;
+      grid-column: 1;
+      min-height: min(78vh, 740px);
+      margin-right: -14%;
+      background: #1a1c21;
+      overflow: hidden;
+      border-radius: 44px 150px 64px 44px;
+      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.38);
+    }
+    .hero-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 30% center;
+      position: absolute;
+      inset: 0;
+      animation: drift 22s ease-in-out infinite alternate;
+    }
+    @keyframes drift {
+      from { transform: scale(1.02); }
+      to { transform: scale(1.05) translate3d(-0.6%, -0.4%, 0); }
+    }
+    .hero-media figcaption {
+      position: absolute;
+      left: 1.2rem;
+      bottom: 1.2rem;
+      z-index: 1;
+      font-size: 0.75rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      background: rgba(16, 17, 20, 0.72);
+      padding: 0.45rem 0.85rem;
+      border-radius: var(--pill);
+      backdrop-filter: blur(8px);
+    }
+    .hero-copy {
+      position: relative;
+      z-index: 1;
+      grid-column: 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: clamp(1.6rem, 3vw, 2.6rem);
+      border-radius: 40px;
+      background:
+        radial-gradient(circle at 100% 0%, rgba(198, 161, 90, 0.2), transparent 42%),
+        rgba(16, 17, 20, 0.78);
+      border: 1px solid rgba(231, 211, 162, 0.22);
+      box-shadow: 0 28px 70px rgba(0, 0, 0, 0.38);
+      backdrop-filter: blur(16px);
+      animation: rise 0.8s ease both;
+    }
+    @keyframes rise {
+      from { opacity: 0; translate: 18px 16px; }
+      to { opacity: 1; translate: 0 0; }
+    }
+    .kicker {
+      margin: 0 0 0.8rem;
+      color: var(--gold-2);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+    h1, h2, h3, .display {
+      font-family: var(--display);
+      font-weight: 650;
+      letter-spacing: 0.03em;
+      line-height: 0.92;
+      margin: 0;
+    }
+    .hero h1 {
+      font-size: clamp(4.6rem, 8vw, 7.4rem);
+      font-weight: 750;
+    }
+    .lede {
+      font-family: var(--serif);
+      font-size: clamp(1.35rem, 2vw, 1.7rem);
+      font-style: italic;
+      line-height: 1.25;
+      margin: 1rem 0 0.8rem;
+      max-width: 18ch;
+    }
+    .hero p { margin: 0; color: rgba(251, 250, 247, 0.82); max-width: 38ch; }
+    .actions { display: flex; flex-wrap: wrap; gap: 0.7rem; margin-top: 1.6rem; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      border: none;
+      padding: 0.85rem 1.35rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.78rem;
+      font-weight: 700;
+      cursor: pointer;
+      background: var(--gold);
+      color: var(--ink);
+      border-radius: var(--pill);
+    }
+    .btn.ghost {
+      background: transparent;
+      color: var(--white);
+      border: 1.5px solid rgba(251, 250, 247, 0.45);
+    }
+    .btn.ink { background: var(--ink); color: var(--white); }
+    .facts {
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+      margin-top: 1.5rem;
+    }
+    .facts > div {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 0.8rem;
+      background: rgba(251, 250, 247, 0.06);
+      border-radius: var(--pill);
+      padding: 0.45rem 0.95rem;
+    }
+    .facts small { text-align: right; }
+    .facts span {
+      display: block;
+      font-family: var(--display);
+      font-size: 1.45rem;
+      letter-spacing: 0.04em;
+    }
+    .facts small {
+      color: rgba(251, 250, 247, 0.65);
+      font-size: 0.75rem;
+      letter-spacing: 0.04em;
+    }
+    .btn { transition: translate 0.25s ease, background 0.25s ease, box-shadow 0.25s ease; }
+    .btn:hover { translate: 0 -2px; box-shadow: 0 10px 24px rgba(198, 161, 90, 0.28); }
+
+    section { padding: 5rem 0; scroll-margin-top: var(--header); }
+    .quote { scroll-margin-top: var(--header); }
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .section-head h2 {
+      font-size: clamp(2.6rem, 5vw, 4.2rem);
+      max-width: 14ch;
+      position: relative;
+      padding-bottom: 0.55rem;
+    }
+    .section-head h2::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 84px;
+      height: 3px;
+      background: var(--gold);
+      border-radius: var(--pill);
+    }
+    .section-head p { max-width: 36ch; color: var(--muted); margin: 0; }
+
+    .board {
+      display: grid;
+      grid-template-columns: 0.86fr 1.14fr;
+      gap: 0;
+      align-items: stretch;
+    }
+    .board-side, .board-main { padding: 1.7rem 1.8rem; }
+    .board-side {
+      background:
+        radial-gradient(circle at 0% 100%, rgba(198, 161, 90, 0.22), transparent 46%),
+        var(--ink);
+      color: var(--white);
+      border-radius: 40px 0 0 40px;
+      position: relative;
+      z-index: 1;
+    }
+    .board-main {
+      background: var(--white);
+      border-radius: 36px;
+      margin-left: -1.6rem;
+      box-shadow: var(--shadow);
+    }
+    .board-side h3 { font-size: 2.4rem; margin-bottom: 0.6rem; }
+    .meta-list { list-style: none; padding: 0; margin: 1.2rem 0 0; }
+    .meta-list li {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0.75rem 0;
+      border-top: 1px solid var(--line-light);
+      font-size: 0.92rem;
+    }
+    .meta-list strong { font-weight: 600; text-align: right; }
+    .meta-list a { color: var(--gold-2); }
+    .steps { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; }
+    .step {
+      border: none;
+      padding: 1.15rem 1.15rem 1.2rem 1.25rem;
+      background: var(--paper);
+      min-height: 150px;
+      border-radius: 20px;
+    }
+    .step em {
+      width: 2.4rem;
+      height: 2.4rem;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--ink);
+      color: var(--gold-2);
+      font-family: var(--display);
+      font-style: normal;
+      font-size: 1.05rem;
+      letter-spacing: 0.04em;
+    }
+    .step h3 { font-size: 1.45rem; margin: 0.2rem 0 0.4rem; }
+    .step p { margin: 0; color: var(--muted); font-size: 0.92rem; }
+
+    .filters { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-bottom: 1.2rem; }
+    .filters button {
+      background: transparent;
+      border: none;
+      box-shadow: inset 0 0 0 1px var(--line);
+      padding: 0.5rem 0.95rem;
+      cursor: pointer;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.72rem;
+      font-weight: 700;
+      border-radius: var(--pill);
+    }
+    .filters button[aria-pressed="true"] {
+      background: var(--ink);
+      color: var(--white);
+      border-color: var(--ink);
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+    .card {
+      background: var(--white);
+      border: none;
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+      border-radius: 28px;
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      cursor: pointer;
+      box-shadow: 0 12px 30px rgba(16, 17, 20, 0.05);
+      transition: translate 0.35s ease, box-shadow 0.35s ease;
+    }
+    .card:hover { translate: 0 -8px; box-shadow: 0 22px 46px rgba(16, 17, 20, 0.12); }
+    .card .btn { margin-top: auto; align-self: flex-start; }
+    .card img { height: 210px; width: 100%; object-fit: cover; object-position: center 40%; transition: transform 0.6s ease; }
+    .card img.liga-shot { height: 230px; object-position: center 46%; }
+    .card:hover img { transform: scale(1.06); }
+    .card .body { padding: 1.15rem 1.25rem 1.7rem; display: flex; flex-direction: column; gap: 0.45rem; flex: 1; }
+    .card h3 { font-size: 1.7rem; }
+    .tag {
+      align-self: flex-start;
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #6a5424;
+      font-weight: 700;
+    }
+    .card p { margin: 0; color: #3e3b34; font-size: 0.95rem; }
+    .placeholder {
+      height: 190px;
+      display: grid;
+      place-items: center;
+      background: var(--ink-2);
+      color: var(--gold-2);
+      font-family: var(--display);
+      letter-spacing: 0.16em;
+      font-size: 1.4rem;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      align-items: start;
+    }
+    .philosophy { display: grid; gap: 0.8rem; }
+    .philosophy article {
+      background: var(--white);
+      border: none;
+      padding: 1rem 1.15rem 1.1rem 1.3rem;
+      border-radius: 22px 22px 22px 36px;
+      box-shadow: 0 10px 24px rgba(16, 17, 20, 0.05);
+    }
+    .philosophy article:nth-child(2) { margin-left: 1.6rem; }
+    .philosophy article:nth-child(3) { margin-left: 0.45rem; }
+    .philosophy h3 { font-size: 1.35rem; margin-bottom: 0.3rem; }
+    .philosophy p { margin: 0; color: var(--muted); }
+
+    .quote {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 92% 0%, rgba(198, 161, 90, 0.28), transparent 32%),
+        var(--ink);
+      color: var(--white);
+      margin: 0 4vw;
+      padding: 5.5rem 0;
+      border-radius: 48px 48px 120px 48px;
+    }
+    .quote blockquote {
+      margin: 0;
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: clamp(1.7rem, 3.4vw, 2.7rem);
+      line-height: 1.25;
+      max-width: 22ch;
+    }
+    .quote figcaption {
+      margin-top: 1.4rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.78rem;
+      color: var(--gold-2);
+    }
+
+    .portal-lines { display: grid; gap: 0.7rem; margin-top: 1rem; }
+    .portal-lines article {
+      background: var(--white);
+      border-radius: 18px;
+      padding: 0.95rem 1rem 1rem 1.1rem;
+    }
+    .portal-lines h3 { font-size: 1.35rem; margin-bottom: 0.25rem; }
+    .portal-lines p { margin: 0; color: var(--muted); }
+    .checks { margin: 0.4rem 0 0; padding-left: 1.1rem; }
+    .checks li { margin: 0.25rem 0; }
+
+    .form-grid { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 2rem; }
+    .contact-card {
+      background: var(--ink);
+      color: var(--white);
+      padding: 1.6rem 1.45rem 1.5rem;
+      border-radius: 28px;
+    }
+    .contact-card a { color: var(--gold-2); }
+    .contact-card p { margin: 0.35rem 0; }
+    .map-frame {
+      margin: 0.85rem 0 0.4rem;
+      border-radius: 18px;
+      overflow: hidden;
+      height: 230px;
+      background: #1a1c20;
+    }
+    .map-frame iframe { width: 100%; height: 100%; border: 0; }
+    form {
+      display: grid;
+      gap: 0.75rem;
+      background: var(--white);
+      border: none;
+      padding: 1.45rem 1.3rem 1.3rem;
+      border-radius: 28px;
+    }
+    label { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; }
+    input, textarea {
+      width: 100%;
+      border: none;
+      background: var(--paper);
+      padding: 0.75rem 0.9rem;
+      color: var(--text);
+      border-radius: 16px;
+    }
+    textarea { min-height: 130px; resize: vertical; }
+    .check { display: flex; gap: 0.6rem; align-items: flex-start; font-size: 0.92rem; text-transform: none; letter-spacing: 0; font-weight: 500; }
+    .check input { width: auto; margin-top: 0.25rem; border-radius: 4px; }
+    .error { color: var(--danger); font-size: 0.85rem; min-height: 1.1em; margin: 0; }
+    .success {
+      display: none;
+      background: #e7f3ec;
+      border: none;
+      color: var(--ok);
+      padding: 0.8rem 0.95rem;
+      border-radius: 16px;
+    }
+    .success.show { display: block; }
+    .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+
+    .docs { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 1rem; }
+    .doc, .sidebox {
+      background: var(--white);
+      border: none;
+      padding: 1.4rem 1.3rem 1.3rem;
+      border-radius: 28px;
+    }
+    .sidebox {
+      background: var(--ink-2);
+      color: var(--white);
+      border-radius: 28px;
+    }
+    .price {
+      font-family: var(--display);
+      font-size: 3rem;
+      color: var(--gold-2);
+      line-height: 1;
+    }
+
+    footer {
+      background: var(--ink);
+      color: rgba(251, 250, 247, 0.75);
+      padding: 1.6rem 0 2rem;
+      font-size: 0.88rem;
+    }
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    footer a { color: var(--gold-2); }
+
+    @media (max-width: 980px) {
+      .menu-btn { display: inline-flex; }
+      .nav {
+        display: none;
+        position: absolute;
+        top: var(--header);
+        left: 0;
+        right: 0;
+        background: var(--ink);
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem 1.2rem 1.3rem;
+        border-bottom: 1px solid var(--line-light);
+      }
+      .nav.open { display: flex; }
+      .hero-stage, .board, .split, .form-grid, .docs, .grid, .steps, .pair {
+        grid-template-columns: 1fr;
+      }
+      .hero { padding: 1rem; min-height: 0; }
+      .hero-media, .hero-copy { grid-column: auto; width: 100%; }
+      .hero-media { min-height: 320px; margin-right: 0; border-radius: 32px 72px 32px 32px; }
+      .hero-copy { padding: 1.7rem 1.2rem 1.8rem; border-radius: 28px; margin-top: -2.4rem; }
+      .board-side, .board-main { border-radius: 28px; }
+      .board-main { margin-left: 0; margin-top: -1.2rem; }
+      .philosophy article:nth-child(2),
+      .philosophy article:nth-child(3) { margin-left: 0; }
+      .quote { margin-inline: 1rem; border-radius: 32px; }
+      .section-head { flex-direction: column; align-items: flex-start; }
+      .facts { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 640px) {
+      .hero h1 { font-size: 4.2rem; }
+      section { padding: 3.4rem 0; }
+    }
+    .equipos { padding: 0 0 1.2rem; margin-top: -1.4rem; }
+    .equipos-head { text-align: center; margin-bottom: 0.2rem; }
+    .equipos-head p { margin: 0 auto; max-width: 46rem; color: var(--muted); }
+    .marquee {
+      overflow: hidden;
+      margin-top: 0.8rem;
+      mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+    }
+    .marquee-track {
+      display: flex;
+      width: max-content;
+      gap: 1.5rem;
+      padding: 1.1rem 0 0.4rem;
+      animation: reel 32s linear infinite;
+    }
+    @keyframes reel {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+    .crest {
+      margin: 0;
+      width: 118px;
+      flex: none;
+      display: grid;
+      justify-items: center;
+      gap: 0.45rem;
+      text-align: center;
+    }
+    .crest-mark {
+      width: 86px;
+      height: 86px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--ink);
+      color: var(--gold-2);
+      object-fit: cover;
+      font-family: var(--display);
+      font-size: 1.4rem;
+      letter-spacing: 0.04em;
+      box-shadow: 0 12px 28px rgba(16, 17, 20, 0.12);
+      transform: scale(1);
+    }
+    .crest-mark.compact { font-size: 1.15rem; letter-spacing: 0.02em; }
+    .crest figcaption {
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .hero-media img, .hero-copy, .marquee-track { animation: none; }
+      * { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#contenido">Saltar al contenido</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#inicio" aria-label="De Tocho">
+        <img class="brand-logo" src="logo-de-tocho.png" alt="De Tocho">
+      </a>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu">Menú</button>
+      <nav class="nav" id="menu" aria-label="Principal">
+        <a href="#liga">Liga</a>
+        <a href="ExpoTocho2027.html">Expo 2027</a>
+        <a href="#ecosistema">Ecosistema</a>
+        <a href="#formacion">Formación</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#documentos">Documentos</a>
+        <a class="nav-cta" href="#contacto">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <section class="hero" id="inicio">
+      <div class="hero-stage">
+      <figure class="hero-media">
+        <img src="hero-sede-hq.jpg?v=nitida" alt="Sala de juntas de Grupo de Tocho, con el logotipo De Tocho y el Ángel de la Independencia">
+        <figcaption>Ciudad de México</figcaption>
+      </figure>
+      <div class="hero-copy">
+        <p class="kicker">Liga de Tocho · Administración de eventos</p>
+        <h1>DTL</h1>
+        <p class="lede">Donde se forma la nueva generación.</p>
+        <p>Una liga estructurada para competir, crecer y trascender. No solo se juegan temporadas: se administra el calendario, la elegibilidad y la cultura del tocho bandera.</p>
+        <div class="actions">
+          <a class="btn" href="ExpoTocho2027.html">Entrar a Expo 2027</a>
+          <a class="btn ghost" href="#liga">Ver operación de la liga</a>
+        </div>
+        <div class="facts">
+          <div><span>5 vs 5</span><small>Formato IFAF en campo</small></div>
+          <div><span>Domingo</span><small>Jornadas de Liga DTL</small></div>
+          <div><span>CDMX</span><small>Reforma 300, 06600</small></div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section id="liga">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Mesa de control de la liga</h2>
+          <p>Formato, elegibilidad, jornada y cierre estadístico en un solo tablero para equipos, capitanes y organizadores.</p>
+        </div>
+        <div class="board">
+          <aside class="board-side">
+            <p class="kicker">Temporada DTL</p>
+            <h3>Flag football con orden de juego.</h3>
+            <p>Liga competitiva con jornadas dominicales para mantener activo el movimiento cada semana.</p>
+            <ul class="meta-list">
+              <li><span>Deporte</span><strong>Tocho bandera</strong></li>
+              <li><span>Formato base</span><strong>IFAF 5 vs 5</strong></li>
+              <li><span>Calendario</span><strong>Jornadas dominicales</strong></li>
+              <li><span>Expo Vallarta</span><strong><a href="ExpoTocho2027.html">Abrir portal 2027</a></strong></li>
+            </ul>
+          </aside>
+          <div class="board-main">
+            <p class="kicker">Ruta de un evento</p>
+            <div class="steps">
+              <article class="step">
+                <em>01</em>
+                <h3>Alta</h3>
+                <p>El equipo entra por categoría y queda en el calendario dominical de la liga.</p>
+              </article>
+              <article class="step">
+                <em>02</em>
+                <h3>Roster</h3>
+                <p>En categorías infantiles el roster es obligatorio, con CURP y credencial escolar.</p>
+              </article>
+              <article class="step">
+                <em>03</em>
+                <h3>Jornada</h3>
+                <p>La liga corre en domingo. El formato de competencia es IFAF 5 vs 5.</p>
+              </article>
+              <article class="step">
+                <em>04</em>
+                <h3>Estadística</h3>
+                <p>La estadística cierra la jornada. La convocatoria de Vallarta vive en su propio portal.</p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="equipos" aria-labelledby="equipos-titulo">
+      <div class="wrap equipos-head">
+        <p class="kicker" id="equipos-titulo">Equipos de americano</p>
+        <p>Diez escudos inventados de fútbol americano, con el color de cada equipo.</p>
+      </div>
+      <div class="marquee">
+        <div class="marquee-track">
+          <figure class="crest"><img class="crest-mark" src="logo-dal.jpg" alt="Escudo inventado de Cowboys"><figcaption>Cowboys</figcaption></figure>
+          <figure class="crest"><img class="crest-mark" src="logo-kc.jpg" alt="Escudo inventado de Chiefs"><figcaption>Chiefs</figcaption></figure>
+          <figure class="crest"><img class="crest-mark" src="logo-sf.jpg" alt="Escudo inventado de 49ers"><figcaption>49ers</figcaption></figure>
+          <figure class="crest"><img class="crest-mark" src="logo-gb.jpg" alt="Escudo inventado de Packers"><figcaption>Packers</figcaption></figure>
+          <figure class="crest"><img class="crest-mark" src="logo-ne.jpg" alt="Escudo inventado de Patriots"><figcaption>Patriots</figcaption></figure>
+          <figure class="crest"><img class="crest-mark" src="logo-pit.jpg" alt="Escudo inventado de Steelers"><figcaption>Steelers</figcaption></figure>
+          <figure class="crest"><img class="crest-mark" src="logo-lv.jpg" alt="Escudo inventado de Raiders"><figcaption>Raiders</figcaption></figure>
+          <figure class="crest"><img class="crest-mark" src="logo-phi.jpg" alt="Escudo inventado de Eagles"><figcaption>Eagles</figcaption></figure>
+          <figure class="crest"><img class="crest-mark" src="logo-mia.jpg" alt="Escudo inventado de Dolphins"><figcaption>Dolphins</figcaption></figure>
+          <figure class="crest"><img class="crest-mark" src="logo-chi.jpg" alt="Escudo inventado de Bears"><figcaption>Bears</figcaption></figure>
+          <figure class="crest" aria-hidden="true"><img class="crest-mark" src="logo-dal.jpg" alt=""><figcaption>Cowboys</figcaption></figure>
+          <figure class="crest" aria-hidden="true"><img class="crest-mark" src="logo-kc.jpg" alt=""><figcaption>Chiefs</figcaption></figure>
+          <figure class="crest" aria-hidden="true"><img class="crest-mark" src="logo-sf.jpg" alt=""><figcaption>49ers</figcaption></figure>
+          <figure class="crest" aria-hidden="true"><img class="crest-mark" src="logo-gb.jpg" alt=""><figcaption>Packers</figcaption></figure>
+          <figure class="crest" aria-hidden="true"><img class="crest-mark" src="logo-ne.jpg" alt=""><figcaption>Patriots</figcaption></figure>
+          <figure class="crest" aria-hidden="true"><img class="crest-mark" src="logo-pit.jpg" alt=""><figcaption>Steelers</figcaption></figure>
+          <figure class="crest" aria-hidden="true"><img class="crest-mark" src="logo-lv.jpg" alt=""><figcaption>Raiders</figcaption></figure>
+          <figure class="crest" aria-hidden="true"><img class="crest-mark" src="logo-phi.jpg" alt=""><figcaption>Eagles</figcaption></figure>
+          <figure class="crest" aria-hidden="true"><img class="crest-mark" src="logo-mia.jpg" alt=""><figcaption>Dolphins</figcaption></figure>
+          <figure class="crest" aria-hidden="true"><img class="crest-mark" src="logo-chi.jpg" alt=""><figcaption>Bears</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="ecosistema" style="background: var(--paper-2);">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Ecosistema De Tocho</h2>
+          <p>Seis iniciativas, una visión: medios, competencia, formación y comunidad alrededor del tocho bandera.</p>
+        </div>
+        <div class="filters" role="toolbar" aria-label="Filtrar iniciativas">
+          <button type="button" data-filter="todos" aria-pressed="true">Todos</button>
+          <button type="button" data-filter="competencia" aria-pressed="false">Competencia</button>
+          <button type="button" data-filter="comunidad" aria-pressed="false">Comunidad</button>
+          <button type="button" data-filter="marca" aria-pressed="false">Marca</button>
+        </div>
+        <div class="grid" id="ecosistema-grid">
+          <a class="card" data-kind="comunidad" href="Revista-de-tocho.html">
+            <img src="https://www.grupodetocho.com/images/1024%2C1080x807%2B0%2B6/19583445/WhatsAppImage2025-09-29at7.33.43PM-Da-9e2OMZdaZsDem2F-hkA.jpeg" alt="Revista de Tocho, el medio editorial del tocho bandera">
+            <div class="body">
+              <span class="tag">Medio</span>
+              <h3>Revista de Tocho</h3>
+              <p>El medio oficial del tocho en México. Documenta, impulsa y archiva el crecimiento del deporte.</p>
+              <span class="btn">Leer la edición</span>
+            </div>
+          </a>
+          <a class="card" data-kind="competencia" href="#liga">
+            <img class="liga-shot" src="liga-dtl.jpg" alt="Dos atletas de tocho bandera en una jugada de captura de bandera">
+            <div class="body">
+              <span class="tag">Liga</span>
+              <h3>Liga DTL</h3>
+              <p>Competencia con constancia. Jornadas dominicales para construir carácter y mentalidad ganadora.</p>
+              <span class="btn">Abrir la mesa</span>
+            </div>
+          </a>
+          <a class="card" data-kind="competencia" href="ExpoTocho2027.html">
+            <img src="expo-vallarta-2027.png" alt="Convocatoria de Expo Tocho Vallarta 2027">
+            <div class="body">
+              <span class="tag">Vallarta</span>
+              <h3>Expo Tocho 2027</h3>
+              <p>Convocatoria oficial frente al Pacífico. Torneo, clínicas y networking con la línea del evento.</p>
+              <span class="btn">Entrar al portal</span>
+            </div>
+          </a>
+          <a class="card" data-kind="marca" href="Dtocho-clothing.html">
+            <img src="https://www.grupodetocho.com/images/0/23387638/Body-fPYIZkcY89pDBeXKUJwZuw.jpg" alt="Body de DTocho Clothing">
+            <div class="body">
+              <span class="tag">Identidad</span>
+              <h3>DTocho Clothing</h3>
+              <p>La marca oficial del movimiento. Body, chaleco, jersey, licra, playera y shorts.</p>
+              <span class="btn">Ver la línea</span>
+            </div>
+          </a>
+          <a class="card" data-kind="comunidad" href="#contacto">
+            <img src="running-tocho.jpg" alt="Grupo de atletas corriendo juntos en un entrenamiento al aire libre">
+            <div class="body">
+              <span class="tag">Rendimiento</span>
+              <h3>Running Tocho</h3>
+              <p>Programa complementario de deporte, comunidad y estilo de vida. El atleta se construye todos los días.</p>
+              <span class="btn">Preguntar por el programa</span>
+            </div>
+          </a>
+          <a class="card" data-kind="competencia" href="#formacion">
+            <img src="centro-formacion.jpg" alt="Entrenamiento de tocho bandera en el campo, con banderas amarillas">
+            <div class="body">
+              <span class="tag">Academia</span>
+              <h3>Centro de Formación</h3>
+              <p>Alto rendimiento en Tecámac. Sábados 4:00 p.m. en Deportivo Fabulandia, Ojo de Agua.</p>
+              <span class="btn">Ver la sede</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="formacion">
+      <div class="wrap split">
+        <div>
+          <p class="kicker">Centro de Formación DTL</p>
+          <h2>Formación élite para dominar el tocho.</h2>
+          <p>Espacio de alto rendimiento para atletas con mentalidad competitiva, fundamentos sólidos y visión de juego. No se entrena por entrenar: se entrena con propósito, método y exigencia.</p>
+          <div class="portal-lines">
+            <article>
+              <h3>Qué lo hace distinto</h3>
+              <p>Metodología progresiva, desarrollo técnico, táctico y mental, lectura de juego y una cultura de disciplina alineada a ligas reales.</p>
+            </article>
+            <article>
+              <h3>La promesa</h3>
+              <p>No forma jugadores promedio. Forma atletas que entienden el juego y compiten para ganar.</p>
+            </article>
+            <article>
+              <h3>Es para ti si</h3>
+              <p>Quieres estándar profesional, mejorar de forma real, exigirte más que el promedio y pertenecer a una cultura de formación.</p>
+            </article>
+          </div>
+        </div>
+        <aside class="contact-card">
+          <p class="kicker">Entrenamientos</p>
+          <h3 class="display" style="font-size:2.4rem;">Deportivo Fabulandia</h3>
+          <p>Fraccionamiento Ojo de Agua<br>Tecámac, Estado de México</p>
+          <div class="map-frame">
+            <iframe
+              title="Mapa de Deportivo Fabulandia, Fraccionamiento Ojo de Agua, Tecámac, Estado de México"
+              src="https://maps.google.com/maps?q=Deportivo+Fabulandia,+Fraccionamiento+Ojo+de+Agua,+Tec%C3%A1mac,+Estado+de+M%C3%A9xico&amp;hl=es&amp;z=16&amp;output=embed"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              allowfullscreen></iframe>
+          </div>
+          <p><a href="https://www.google.com/maps/search/?api=1&amp;query=Deportivo+Fabulandia+Fraccionamiento+Ojo+de+Agua+Tec%C3%A1mac+Estado+de+M%C3%A9xico" target="_blank" rel="noopener">Abrir en Google Maps</a></p>
+          <p><strong>Sábados · 4:00 p.m.</strong></p>
+          <p>Entrenamiento con identidad. Formación con carácter. Tocho de alto nivel.</p>
+          <a class="btn" href="https://www.grupodetocho.com/centro-de-fomacion-dtl" target="_blank" rel="noopener">Página oficial del centro</a>
+        </aside>
+      </div>
+    </section>
+
+    <section id="nosotros" style="padding-top:0;">
+      <div class="wrap split">
+        <div>
+          <p class="kicker">Nosotros</p>
+          <h2>El tocho bandera, convertido en ecosistema.</h2>
+          <p>Grupo de Tocho nace para impulsar el tocho bandera en México y abrir espacios reales para su comunidad: medios, eventos, formación, competencia y pertenencia.</p>
+          <p>Más allá de organizar partidos, el proyecto busca un crecimiento profesional, cercano y sostenible, junto a marcas que quieran formar parte de la comunidad.</p>
+        </div>
+        <div class="philosophy">
+          <article>
+            <h3>Estructura</h3>
+            <p>El tocho bandera merece crecer con estructura y visión de largo plazo.</p>
+          </article>
+          <article>
+            <h3>Pertenencia</h3>
+            <p>La comunidad se construye desde el respeto, la competencia y el sentido de equipo.</p>
+          </article>
+          <article>
+            <h3>Valor real</h3>
+            <p>Las marcas entran para sumar a la comunidad, no solo para aparecer en ella.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <figure class="quote">
+      <div class="wrap">
+        <blockquote>“El tocho siempre fue grande. Solo esperaba quien se atreviera a elevarlo. No llegamos para participar en la historia, llegamos para escribir el capítulo que lo cambió todo.”</blockquote>
+        <figcaption>Sergio A. Osio Saldaña · Fundador, Grupo de Tocho</figcaption>
+      </div>
+    </figure>
+
+    <section id="revista">
+      <div class="wrap docs">
+        <article class="doc">
+          <p class="kicker">Revista de Tocho</p>
+          <h2>La voz del tocho bandera.</h2>
+          <p>En un deporte que crece más rápido que cualquier otro en México, la revista se plantea como archivo oficial, punto de encuentro y voz del tocho bandera nacional.</p>
+          <p>La carta del director, firmada por Sergio A. Osio Saldaña, da la bienvenida a la primera edición: entrevistas, análisis, historias de ligas locales y cobertura del panorama nacional. En la misma página aparece Akira Esqueda y la entrevista al Dr. Gustavo Alonso Ríos López, ortopedista y traumatólogo: “¿Cirugía o manejo conservador? Cómo identificar lesiones que requieren intervención”.</p>
+          <a class="btn ink" href="Revista-de-tocho.html">Abrir la revista oficial</a>
+        </article>
+        <aside class="sidebox">
+          <p class="kicker">DTocho Clothing</p>
+          <h3 class="display" style="font-size:2.2rem;">La línea publicada.</h3>
+          <p>La tienda publica body, chaleco, jersey, licra, playera casual y dos shorts.</p>
+          <a class="btn" href="Dtocho-clothing.html">Ver la línea</a>
+        </aside>
+      </div>
+    </section>
+
+    <section id="documentos" style="padding-top:0;">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Documentos</h2>
+          <p>Requisitos de participación y enlaces de registro publicados por Grupo de Tocho.</p>
+        </div>
+        <div class="docs">
+          <article class="doc">
+            <h3 class="display" style="font-size:2rem;">Checklist de participación</h3>
+            <ol class="checks">
+              <li>Confirmar el equipo para la jornada dominical de Liga DTL.</li>
+              <li>Preparar el roster antes del cierre de registro.</li>
+              <li>Para la convocatoria de Vallarta, entrar al portal de Expo Tocho 2027.</li>
+            </ol>
+          </article>
+          <aside class="doc">
+            <h3 class="display" style="font-size:2rem;">Registros oficiales</h3>
+            <p><a href="ExpoTocho2027.html">Portal Expo Tocho Vallarta 2027</a></p>
+            <p><a href="legal-notice.html">Aviso legal</a></p>
+            <p><a href="Privacy.html">Política de privacidad</a></p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto" style="background: var(--paper-2);">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Contacto</h2>
+          <p>Para ligas, equipos, marcas y familias que quieran entrar a un proyecto de Grupo de Tocho.</p>
+        </div>
+        <div class="form-grid">
+          <address class="contact-card">
+            <p class="kicker">Grupo de Tocho</p>
+            <p>Av. Paseo de la Reforma #300<br>CDMX 06600</p>
+            <p><a href="tel:+525620385823">56 2038 5823</a></p>
+            <p><a href="mailto:info@grupodetocho.com">info@grupodetocho.com</a></p>
+            <p><a href="https://www.google.com/maps/search/?api=1&query=Av.+Paseo+de+la+Reforma+300+CDMX+06600" target="_blank" rel="noopener">Ver en el mapa</a></p>
+          </address>
+          <form id="contacto-form" novalidate>
+            <div class="pair">
+              <div>
+                <label for="compania">Compañía</label>
+                <input id="compania" name="compania" autocomplete="organization" placeholder="Equipo, liga o marca">
+              </div>
+              <div>
+                <label for="nombre">Nombre</label>
+                <input id="nombre" name="nombre" autocomplete="name" required placeholder="Nombre">
+              </div>
+            </div>
+            <div class="pair">
+              <div>
+                <label for="telefono">Teléfono</label>
+                <input id="telefono" name="telefono" autocomplete="tel" placeholder="10 dígitos">
+              </div>
+              <div>
+                <label for="correo">Correo electrónico</label>
+                <input id="correo" name="correo" type="email" autocomplete="email" required placeholder="correo@equipo.com">
+              </div>
+            </div>
+            <div>
+              <label for="mensaje">Mensaje</label>
+              <textarea id="mensaje" name="mensaje" required placeholder="Cuéntanos si buscas liga, expo, formación o una alianza."></textarea>
+            </div>
+            <label class="check">
+              <input id="privacidad" type="checkbox" required>
+              <span>He leído y comprendido la <a href="Privacy.html">política de privacidad</a>.</span>
+            </label>
+            <p class="error" id="form-error" role="alert"></p>
+            <p class="success" id="form-ok" role="status"></p>
+            <button class="btn ink" type="submit">Enviar</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <p>Grupo de Tocho · DTL · Viviendo el tocho</p>
+      <p>
+        <a href="https://www.grupodetocho.com/" target="_blank" rel="noopener">Portal original</a>
+        ·
+        <a href="legal-notice.html">Aviso legal</a>
+        ·
+        <a href="Privacy.html">Privacidad</a>
+      </p>
+    </div>
+  </footer>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SportsOrganization",
+    "name": "Grupo de Tocho",
+    "alternateName": "DTL",
+    "sport": "Flag football",
+    "email": "info@grupodetocho.com",
+    "telephone": "+52-56-2038-5823",
+    "url": "https://www.grupodetocho.com/",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Paseo de la Reforma #300",
+      "addressLocality": "Ciudad de México",
+      "postalCode": "06600",
+      "addressCountry": "MX"
+    }
+  }
+  </script>
+  <script>
+    const menuBtn = document.querySelector(".menu-btn");
+    const menu = document.querySelector("#menu");
+    menuBtn.addEventListener("click", () => {
+      const open = menu.classList.toggle("open");
+      menuBtn.setAttribute("aria-expanded", String(open));
+    });
+    const rail = document.querySelector(".marquee");
+    const marks = document.querySelectorAll(".crest-mark");
+    if (rail && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      const crecer = () => {
+        const box = rail.getBoundingClientRect();
+        const medio = box.left + box.width / 2;
+        marks.forEach((mark) => {
+          const zona = mark.getBoundingClientRect();
+          const distancia = Math.abs(zona.left + zona.width / 2 - medio);
+          const cerca = Math.max(0, 1 - distancia / 210);
+          mark.style.transform = "scale(" + (1 + cerca * 0.28).toFixed(3) + ")";
+        });
+        requestAnimationFrame(crecer);
+      };
+      requestAnimationFrame(crecer);
+    }
+
+    menu.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        menu.classList.remove("open");
+        menuBtn.setAttribute("aria-expanded", "false");
+      });
+    });
+
+    document.querySelectorAll(".filters button").forEach((button) => {
+      button.addEventListener("click", () => {
+        const kind = button.dataset.filter;
+        document.querySelectorAll(".filters button").forEach((item) => {
+          item.setAttribute("aria-pressed", String(item === button));
+        });
+        document.querySelectorAll("#ecosistema-grid .card").forEach((card) => {
+          card.hidden = kind !== "todos" && card.dataset.kind !== kind;
+        });
+      });
+    });
+
+    const form = document.querySelector("#contacto-form");
+    const error = document.querySelector("#form-error");
+    const ok = document.querySelector("#form-ok");
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      error.textContent = "";
+      ok.classList.remove("show");
+      const data = new FormData(form);
+      const nombre = String(data.get("nombre") || "").trim();
+      const correo = String(data.get("correo") || "").trim();
+      const mensaje = String(data.get("mensaje") || "").trim();
+      const privacidad = document.querySelector("#privacidad").checked;
+      if (!nombre || !correo || !mensaje || !privacidad) {
+        error.textContent = "Completa nombre, correo, mensaje y la política de privacidad.";
+        return;
+      }
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(correo)) {
+        error.textContent = "Escribe un correo válido.";
+        return;
+      }
+      const body = [
+        "Compañía: " + (data.get("compania") || "—"),
+        "Nombre: " + nombre,
+        "Teléfono: " + (data.get("telefono") || "—"),
+        "Correo: " + correo,
+        "",
+        mensaje
+      ].join("\n");
+      ok.textContent = "Listo. Se abrirá tu correo para enviar el mensaje a info@grupodetocho.com.";
+      ok.classList.add("show");
+      window.location.href = "mailto:info@grupodetocho.com?subject=" +
+        encodeURIComponent("Contacto DTL — " + nombre) +
+        "&body=" + encodeURIComponent(body);
+    });
+  </script>
+</body>
+</html>
